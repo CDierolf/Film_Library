@@ -1,5 +1,4 @@
 ﻿using MovieAPI.models;
-using MovieAPI.viewmodels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -34,7 +33,7 @@ namespace MovieAPI
 
         public static async void GetMovieData(string movieTitle)
         {
-            MovieDataAPIVM movieVM = new MovieDataAPIVM();
+            MovieAPIModel movieVM = new MovieAPIModel();
             MovieData movieData = new MovieData();
 
             movieData = await movieVM.GetMovieDataAsync(movieTitle);

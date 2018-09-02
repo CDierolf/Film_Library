@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="models\MovieAPI.cs" />
+    <Compile Include="models\MovieAPIModel.cs" />
     <Compile Include="models\MovieData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
