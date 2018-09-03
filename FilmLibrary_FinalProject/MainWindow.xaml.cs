@@ -54,5 +54,10 @@ namespace FilmLibrary_FinalProject
                 movieData.Year + "\nGenre: " + movieData.Genre + "\nPlot: " + movieData.Plot);
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello you beautiful bastard");
+        }
     }
 }
