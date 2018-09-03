@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBConnectionClass.cs" />
     <Compile Include="LocalMovieData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
