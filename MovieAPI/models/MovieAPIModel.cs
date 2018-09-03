@@ -36,7 +36,7 @@ namespace MovieAPI.models
                 string json = await response.Content.ReadAsStringAsync();
 
                 /* Deserialize the json data using Newtonsoft.Json's JsonConvert method.
-                 * Creates a MovieData object out of the json 
+                 * Creates a MovieData object out of the json and returns a Task<MovieData> object.
                  */
                 result = JsonConvert.DeserializeObject<MovieData>(json);
             }
