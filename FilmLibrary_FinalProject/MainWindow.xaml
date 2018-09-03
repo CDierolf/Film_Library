@@ -7,10 +7,5 @@
         mc:Ignorable="d"
         Title="Personal Film Library" Height="450" Width="800">
     <Grid>
-        <Button Content="Click Me"
-                Width="150"
-                Height="100"
-                VerticalAlignment="Center"
-                Click="Button_Click"/>
     </Grid>
 </Window>
