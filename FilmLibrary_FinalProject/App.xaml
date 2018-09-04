@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:FilmLibrary_FinalProject"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>
