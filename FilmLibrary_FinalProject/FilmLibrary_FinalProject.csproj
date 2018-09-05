@@ -86,6 +86,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="models\Movie.cs" />
     <Compile Include="models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
