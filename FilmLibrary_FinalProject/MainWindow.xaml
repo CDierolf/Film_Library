@@ -6,8 +6,5 @@
         xmlns:local="clr-namespace:FilmLibrary_FinalProject"
         mc:Ignorable="d"
         Title="Personal Film Library" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="334,147,0,0" VerticalAlignment="Top" Width="74"/>
-
-    </Grid>
+    <Grid/>
 </Window>
