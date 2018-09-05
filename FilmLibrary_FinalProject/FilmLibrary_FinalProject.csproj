@@ -79,12 +79,14 @@
     <Compile Include="Controls\FilmDataControl.xaml.cs">
       <DependentUpon>FilmDataControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\IUserValidator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
