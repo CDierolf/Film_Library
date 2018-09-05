@@ -8,6 +8,10 @@ namespace FilmLibrary_FinalProject.interfaces
 {
     interface IUserValidator
     {
-        bool AuthenticateUser(string username, string password);
+        bool IsValidUser(bool email, bool date, bool name);
+        bool IsValidEmail(string email);
+        bool IsValidDate(string date);
+        bool IsValidUsername(string username);
+
     }
 }
