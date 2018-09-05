@@ -12,6 +12,5 @@ namespace FilmLibrary_FinalProject.interfaces
         bool IsValidEmail(string email);
         bool IsValidDate(string date);
         bool IsValidUsername(string username);
-
     }
 }

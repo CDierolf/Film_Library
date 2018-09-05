@@ -18,16 +18,19 @@ namespace FilmLibrary_FinalProject.models.validators
             if (!IsValidDate(Date) || !IsValidEmail(Email) || !IsValidUsername(Username)) {
                 if (!IsValidDate(Date))
                 {
+                    //TODO
                     throw new InvalidDateException("Date is in an incorrect format.");
                 }
 
                 if (!IsValidEmail(Email))
                 {
+                    //TODO
                     throw new InvalidEmailException("Email address is invalid.");
                 }
 
                 if (!IsValidUsername(Username))
                 {
+                    //TODO
                     throw new InvalidUsernameException("Username is invalid.");
                 }
                 return false;
@@ -40,16 +43,19 @@ namespace FilmLibrary_FinalProject.models.validators
 
         public bool IsValidDate(string date)
         {
+            //TODO
             throw new NotImplementedException();
         }
 
         public bool IsValidEmail(string email)
         {
+            //TODO
             throw new NotImplementedException();
         }
 
         public bool IsValidUsername(string username)
         {
+            //TODO
             throw new NotImplementedException();
         }
 
