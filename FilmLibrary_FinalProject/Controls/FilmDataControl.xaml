@@ -27,7 +27,7 @@
                                FontWeight="Bold"/>
                 </Grid>
                 
-                <TextBlock Text="Released: 1981" 
+                <TextBlock Text="Released: 1974" 
                            FontSize="16"
                            Foreground="DodgerBlue"/>
                 <Separator Width="250"
