@@ -12,6 +12,8 @@ namespace FilmLibrary_FinalProject.models
     /// </summary>
     public class User
     {
+        #region Class Properties
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string DateOfBirth { get; set; }
@@ -19,6 +21,9 @@ namespace FilmLibrary_FinalProject.models
         public string UserName { get; set; }
         public string Password { get; set; }
 
+        #endregion
+
+        #region Constructors
 
         /// <summary>
         /// default ctor
@@ -44,18 +49,21 @@ namespace FilmLibrary_FinalProject.models
             Password = password;
 
             // Validate and call create user
+            // ValidateUser(...);
             
         }
+        #endregion
+
+
+        #region Methods
         /// <summary>
         /// Authenticate user credentials. 
         /// Compares the user entered credentials against
         /// the local database user table.
         /// Inherited from the IUserValidator interface
         /// </summary>
-        /// <param name="userName"></param>
-        /// <param name="password"></param>
         /// <returns>Returns true if credentials are authenticated. False if failed</returns>
-        public bool AuthenticateUser(string userName, string password)
+        public bool AuthenticateUser()
         {
             // TODO
             return true;
@@ -64,12 +72,14 @@ namespace FilmLibrary_FinalProject.models
         /// <summary>
         /// Create a new user
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if created successfully, false otherwise</returns>
         public bool CreateUser()
         {
             // TODO
             return true;
         }
+
+        #endregion
     }
 }
 
