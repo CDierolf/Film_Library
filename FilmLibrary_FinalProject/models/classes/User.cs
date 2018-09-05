@@ -10,7 +10,7 @@ namespace FilmLibrary_FinalProject.models
     /// <summary>
     /// 
     /// </summary>
-    public class User : IUserValidator
+    public class User
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -43,10 +43,9 @@ namespace FilmLibrary_FinalProject.models
             UserName = userName;
             Password = password;
 
-            // Call the CreateUser method.
-            CreateUser();
+            // Validate and call create user
+            
         }
-
         /// <summary>
         /// Authenticate user credentials. 
         /// Compares the user entered credentials against
@@ -74,8 +73,3 @@ namespace FilmLibrary_FinalProject.models
     }
 }
 
-public bool AuthenticateUser(string userName, string password)
-{
-    // TODO
-    return true;
-}
