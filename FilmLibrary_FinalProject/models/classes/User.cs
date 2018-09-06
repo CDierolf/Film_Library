@@ -1,4 +1,5 @@
 ﻿using FilmLibrary_FinalProject.interfaces;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,8 @@ namespace FilmLibrary_FinalProject.models
     public class User
     {
         #region Class Properties
-
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string DateOfBirth { get; set; }

@@ -1,6 +1,7 @@
 ﻿using FilmLibrary_FinalProject.interfaces;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,24 +16,8 @@ namespace FilmLibrary_FinalProject.models.validators
 
         public bool IsValidUser(bool isValidDate, bool isValidEmail, bool isValidUsername)
         {
-            if (!IsValidDate(Date) || !IsValidEmail(Email) || !IsValidUsername(Username)) {
-                if (!IsValidDate(Date))
-                {
-                    //TODO
-                    throw new InvalidDateException("Date is in an incorrect format.");
-                }
-
-                if (!IsValidEmail(Email))
-                {
-                    //TODO
-                    throw new InvalidEmailException("Email address is invalid.");
-                }
-
-                if (!IsValidUsername(Username))
-                {
-                    //TODO
-                    throw new InvalidUsernameException("Username is invalid.");
-                }
+            if (!IsValidDate(Date) || !IsValidEmail(Email) || !IsValidUsername(Username))
+            {
                 return false;
             }
             else
@@ -43,8 +28,23 @@ namespace FilmLibrary_FinalProject.models.validators
 
         public bool IsValidDate(string date)
         {
-            //TODO
-            throw new NotImplementedException();
+            string format;
+            DateTime result;
+            CultureInfo provider = CultureInfo.InvariantCulture;
+
+            format = "d";
+
+            try
+            {
+                result = DateTime.ParseExact(date, format, provider);
+            }
+            catch (InvalidDateException ex)
+            {
+                Console.WriteLine("Invalid date format.\n\nMessage: {0}\nSource: {1}", ex.Message, ex.Source);
+                return false;
+                
+            }
+            return true;
         }
 
         public bool IsValidEmail(string email)
