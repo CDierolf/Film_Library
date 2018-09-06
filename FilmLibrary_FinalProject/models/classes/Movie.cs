@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace FilmLibrary_FinalProject.models
     {
         #region Class Properties
         
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
         public string MovieTitle { get; set; }
         public string ReleaseYear { get; set; }
         public string Plot { get; set; }
@@ -17,14 +20,12 @@ namespace FilmLibrary_FinalProject.models
         public string Genre { get; set; }
         #endregion
 
-
         #region Constructors
         
         /// <summary>
         /// Default ctor
         /// </summary>
         public Movie() { }
-
 
         /// <summary>
         /// overloaded ctor
@@ -44,20 +45,5 @@ namespace FilmLibrary_FinalProject.models
         }
 
         #endregion
-
-        #region Class Methods
-
-        /// <summary>
-        /// Saves the movie to the local database
-        /// </summary>
-        /// <returns>True if save is successful, false if not</returns>
-        public bool SaveMovie()
-        {
-            ///TODO
-            return false;
-        }
-        #endregion
-
-
     }
 }

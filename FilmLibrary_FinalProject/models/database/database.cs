@@ -29,9 +29,10 @@ namespace FilmLibraryDatabase
                     conn.CreateTable<User>();
                     conn.Insert(user);
                 }
-            } catch (SQLiteException ex)
+            }
+            catch (SQLiteException ex)
             {
-                Console.WriteLine("An exception has occured\n\nMessage: {0}\nSource: {1}",ex.Message, ex.Source);
+                Console.WriteLine("An exception has occured\n\nMessage: {0}\nSource: {1}", ex.Message, ex.Source);
                 return false;
             }
 
@@ -52,7 +53,8 @@ namespace FilmLibraryDatabase
                     conn.CreateTable<Movie>();
                     conn.Insert(movie);
                 }
-            } catch (SQLiteException ex)
+            }
+            catch (SQLiteException ex)
             {
                 Console.WriteLine("An exception has occured\n\nMessage: {0}\nSource: {1}", ex.Message, ex.Source);
                 return false;
