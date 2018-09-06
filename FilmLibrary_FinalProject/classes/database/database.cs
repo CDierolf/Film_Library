@@ -10,7 +10,7 @@ namespace FilmLibraryDatabase
 {
     public class DBConnectionClass
     {
-        static string dbName = "Users.db";
+        static string dbName = "FilmDatabase.db";
         static string dbFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         static string dbPath = String.Format(dbFolderPath, dbName);
 
