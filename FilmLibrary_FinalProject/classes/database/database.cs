@@ -26,7 +26,7 @@ namespace FilmLibraryDatabase
             {
                 using (SQLiteConnection conn = new SQLiteConnection(dbPath))
                 {
-                    conn.CreateTable<User>();
+                    conn.CreateTable<User>(); // Only creates a new table if one doesn't exist locally already.
                     conn.Insert(user);
                 }
             }
@@ -42,15 +42,17 @@ namespace FilmLibraryDatabase
         /// <summary>
         /// Insert movie into local database.
         /// </summary>
-        /// <param name="movie"></param>
+        /// <param name="movie">Accepts a movie object.</param>
         /// <returns>true if successfull, false if unsuccessful</returns>
         public bool AddMovie(Movie movie)
         {
             try
             {
-                using (SQLiteConnection conn = new SQLiteConnection(dbPath))
+                // Because only one connection can be open at a time, by using the Using statement, you don't have 
+                // to continually ensure your connections are closed manually.
+                using (SQLiteConnection conn = new SQLiteConnection(dbPath))  
                 {
-                    conn.CreateTable<Movie>();
+                    conn.CreateTable<Movie>(); // Only creates a new table if one doesn't exist locally already.
                     conn.Insert(movie);
                 }
             }

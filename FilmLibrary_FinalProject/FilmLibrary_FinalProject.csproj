@@ -96,18 +96,18 @@
     <Compile Include="Controls\FilmDataControl.xaml.cs">
       <DependentUpon>FilmDataControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="models\database\database.cs" />
-    <Compile Include="models\interfaces\IUserValidator.cs" />
+    <Compile Include="classes\database\database.cs" />
+    <Compile Include="classes\interfaces\IUserValidator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="models\exceptions\InvalidUserExceptions.cs" />
-    <Compile Include="models\classes\Movie.cs" />
-    <Compile Include="models\classes\User.cs" />
-    <Compile Include="models\validators\UserValidator.cs" />
+    <Compile Include="classes\exceptions\InvalidUserExceptions.cs" />
+    <Compile Include="classes\models\Movie.cs" />
+    <Compile Include="classes\models\User.cs" />
+    <Compile Include="classes\validators\UserValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

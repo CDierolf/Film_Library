@@ -71,16 +71,6 @@ namespace FilmLibrary_FinalProject.models
             return true;
         }
 
-        /// <summary>
-        /// Create a new user
-        /// </summary>
-        /// <returns>True if created successfully, false otherwise</returns>
-        public bool CreateUser()
-        {
-            // TODO
-            return true;
-        }
-
         #endregion
     }
 }
