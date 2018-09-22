@@ -13,7 +13,7 @@ namespace MovieAPI.models
     public class MovieAPIModel
     {
         public const string API_KEY = "49bee854";
-        public const string BASE_URL = "http://www.omdbapi.com/?t={0}&apikey={1}"; // 0 = movie title, 1 = API_KEY
+        public const string BASE_URL = "http://www.omdbapi.com/?s={0}&apikey={1}"; // 0 = movie title, 1 = API_KEY
 
         /// <summary>
         /// Async task of MovieData
