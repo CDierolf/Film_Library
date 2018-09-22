@@ -26,6 +26,9 @@ namespace FilmLibrary_FinalProject
             // Testing references
             //MovieAPI.models.MovieAPIModel api = new MovieAPI.models.MovieAPIModel();
             GetMovieTitle();
+
+            UserTextBox.Text = "Username";
+            PassTextBox.Text = "Password";
             
         }
 
@@ -55,9 +58,6 @@ namespace FilmLibrary_FinalProject
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Hello you beautiful bastard");
-        }
+        
     }
 }

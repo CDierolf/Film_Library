@@ -5,9 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilmLibrary_FinalProject"
         mc:Ignorable="d"
-        Title="Personal Film Library" Height="450" Width="800">
+        Title="Film Cache" Height="550" Width="1000" Background="#7E878F" ResizeMode="NoResize">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="334,147,0,0" VerticalAlignment="Top" Width="74"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".2*"/>
+            <ColumnDefinition Width=".15*"/>
+            <ColumnDefinition Width=".2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Width="200"
+                   Height="275"
+                   Fill="#9BA6B0" Stroke="Black" StrokeThickness="2"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   RadiusX="15"
+                   RadiusY="15"/>
+
+        <TextBox Height="20" Name="UserTextBox"
+                 Grid.Column="1" Grid.Row="1"
+                 VerticalAlignment="Top"
+                 Margin="60,60,60,0"/>
+        
+        <TextBox Height="20" Name="PassTextBox"
+                 Grid.Column="1" Grid.Row="1"
+                 VerticalAlignment="Top"
+                 Margin="60,90,60,0"/>
+
+        <Button Content="Login" Background="White"
+                Height="25" Width="75"
+                Grid.Column="1" Grid.Row="1"
+                VerticalAlignment="Bottom"
+                Margin="80"/>
+
 
     </Grid>
 </Window>
