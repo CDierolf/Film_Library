@@ -25,10 +25,10 @@ namespace FilmLibrary_FinalProject
             InitializeComponent();
             // Testing references
             //MovieAPI.models.MovieAPIModel api = new MovieAPI.models.MovieAPIModel();
-            GetMovieTitle();
+            //GetMovieTitle();
 
-            UserTextBox.Text = "Username";
-            PassTextBox.Text = "Password";
+            //UserTextBox.Text = "Username";
+            //PassTextBox.Text = "Password";
             
         }
 
@@ -58,6 +58,9 @@ namespace FilmLibrary_FinalProject
 
         }
 
-        
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            GetMovieTitle();
+        }
     }
 }

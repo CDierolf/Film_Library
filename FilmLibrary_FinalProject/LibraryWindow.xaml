@@ -27,13 +27,37 @@
                    VerticalAlignment="Bottom"
                    Fill="#7E878F" Stroke="Black" StrokeThickness="1"
                    Grid.ColumnSpan="3"
-                   Grid.RowSpan="3" Margin="10,0,10,10"/>
+                   Grid.RowSpan="3" Margin="10,0,10,10"
+            />
+        <ListView 
+            Grid.Column="1"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="2"
+            Margin="0,0,20,20"
+            />
+
 
         <Rectangle Height="470"
                    Fill="#9BA6B0" Stroke="Black" StrokeThickness="1"
                    VerticalAlignment="Bottom"
                    Grid.Column="0"
                    Grid.RowSpan="3" Margin="10,0,10,10"/>
+        <StackPanel Grid.Column="0"
+                    Grid.Row="1"
+                    Margin="15,5,15,0">
+            <Button Margin="0,0,0,5">
+                <TextBlock Text="Add New Movie      From API" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button>
+            <Button Margin="0,0,0,5">
+                <TextBlock Text="Add New Movie      Manually" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button>
+            <Button Margin="0,0,0,5">
+                <TextBlock Text="Search Personal Library" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button>
+
+        </StackPanel>
 
     </Grid>
+
 </Window>

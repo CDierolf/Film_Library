@@ -84,7 +84,6 @@
     <Compile Include="LibraryWindow.xaml.cs">
       <DependentUpon>LibraryWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
     <Page Include="Controls\FilmDataControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

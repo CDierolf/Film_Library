@@ -8,6 +8,7 @@
 
         Title="Film Cache" Height="550" Width="1000" Background="#7E878F" ResizeMode="NoResize">
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".2*"/>
             <ColumnDefinition Width=".15*"/>
@@ -18,7 +19,13 @@
             <RowDefinition Height="2.5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <TextBlock Text="Login"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   Margin="0,15,0,225" 
+                   Panel.ZIndex="1"
+                   FontSize="30"/>
         <Rectangle Width="200"
                    Height="275"
                    Fill="#9BA6B0" Stroke="Black" StrokeThickness="2"
@@ -27,21 +34,39 @@
                    RadiusX="15"
                    RadiusY="15"/>
 
-        <TextBox Height="20" Name="UserTextBox"
-                 Grid.Column="1" Grid.Row="1"
-                 VerticalAlignment="Top"
-                 Margin="60,60,60,0"/>
-        
-        <TextBox Height="20" Name="PassTextBox"
-                 Grid.Column="1" Grid.Row="1"
-                 VerticalAlignment="Top"
-                 Margin="60,90,60,0"/>
+        <Border Grid.Column="1"
+                Grid.Row="1"
+                BorderBrush="White"
+                BorderThickness="1"
+                Margin="53,80,53,90"
+                CornerRadius="5">
+            
+        </Border>
 
-        <Button Content="Login" Background="White"
-                Height="25" Width="75"
-                Grid.Column="1" Grid.Row="1"
-                VerticalAlignment="Bottom"
-                Margin="80"/>
+        <StackPanel Margin="60,90,60,60"
+                    Grid.Column="1"
+                    Grid.Row="1">
+            <TextBlock Text="Username"/>
+            <TextBox />
+            <TextBlock Text="Password"/>
+            <TextBox />
+            <Button x:Name="btnLogin"
+                Height="20"
+                    Margin="30,10,30,0"
+                    Content="Login"
+                    Click="btnLogin_Click"/>
+            
+            <Button x:Name="btnCreateAcct"
+                Content="Create new account"
+                HorizontalAlignment="Center"
+                Foreground="DarkSlateBlue"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Margin="0,20"/>
+
+        </StackPanel>
+        
+
 
 
     </Grid>
