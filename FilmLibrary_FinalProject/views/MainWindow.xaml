@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FilmLibrary_FinalProject"
         mc:Ignorable="d"
 
-        Title="Film Cache" Height="550" Width="1000" Background="#7E878F" ResizeMode="NoResize">
+        Title="Film Cache - Login" Height="550" Width="1000" Background="#7E878F" ResizeMode="NoResize">
     <Grid>
         
         <Grid.ColumnDefinitions>
@@ -62,7 +62,8 @@
                 Foreground="DarkSlateBlue"
                 Background="Transparent"
                 BorderBrush="Transparent"
-                Margin="0,20"/>
+                Margin="0,20"
+                    Click="btnCreateAcct_Click"/>
 
         </StackPanel>
         

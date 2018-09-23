@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FilmLibrary_FinalProject.views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -60,7 +61,18 @@ namespace FilmLibrary_FinalProject
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            GetMovieTitle();
+            //TODO
+            // Authenticate user
+            
+            LibraryWindow lw = new LibraryWindow();
+            lw.Show();
+            this.Close();
+        }
+
+        private void btnCreateAcct_Click(object sender, RoutedEventArgs e)
+        {
+            CreateAccountWindow caw = new CreateAccountWindow();
+            caw.Show();
         }
     }
 }
