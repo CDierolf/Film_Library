@@ -63,6 +63,7 @@ namespace FilmLibrary_FinalProject
         {
             //TODO
             // Authenticate user
+            // Exception handing for invalid user needed.
             
             LibraryWindow lw = new LibraryWindow();
             lw.Show();
@@ -71,6 +72,8 @@ namespace FilmLibrary_FinalProject
 
         private void btnCreateAcct_Click(object sender, RoutedEventArgs e)
         {
+            // TODO
+            // CreateAccountWindow will take custom user validation exceptions
             CreateAccountWindow caw = new CreateAccountWindow();
             caw.Show();
         }
