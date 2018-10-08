@@ -27,5 +27,12 @@ namespace FilmLibrary_FinalProject.models
         public InvalidUsernameException(string message, Exception inner) : base(message, inner) { }
     }
 
+    public class InvalidPasswordException : Exception
+    {
+        public InvalidPasswordException() { }
+        public InvalidPasswordException(string message) : base(message) { }
+        public InvalidPasswordException(string message, Exception inner) : base(message, inner) { }
+    }
+
     
 }
