@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FilmLibrary_FinalProject.models;
+using FilmLibrary_FinalProject.models.validators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,17 @@ namespace FilmLibrary_FinalProject.views
         public CreateAccountWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UserValidator uv = new UserValidator(txtEmail.Text, txtUserName.Text, pwdPass1.Password, pwdPass2.Password);
+            if (!uv.IsValidUser())
+            {
+                //TODO
+            }
+
+           // User user = new User(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtUserName.Text, pwdPass1.Password);
         }
     }
 }

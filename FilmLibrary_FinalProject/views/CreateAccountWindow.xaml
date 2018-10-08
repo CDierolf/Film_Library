@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilmLibrary_FinalProject.views"
         mc:Ignorable="d"
-        Title="CreateAccountWindow" Height="400" Width="300" Background="#7E878F" ResizeMode="NoResize">
+        Title="CreateAccountWindow" Height="600" Width="300" Background="#7E878F" ResizeMode="NoResize">
     <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -29,5 +29,21 @@
                 BorderBrush="White"
                 BorderThickness="2"
                 CornerRadius="5"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5" VerticalAlignment="Center">
+            <Label Content="First Name: "/>
+            <TextBox x:Name="txtFirstName"/>
+            <Label Content="Last Name: "/>
+            <TextBox x:Name="txtLastName"/>
+            <Label Content="Username: "/>
+            <TextBox x:Name="txtUserName"/>
+            <Label Content="Password: "/>
+            <PasswordBox x:Name="pwdPass1"/>
+            <Label Content="Re-type password: "/>
+            <PasswordBox x:Name="pwdPass2"/>
+            <Label Content="E-Mail: "/>
+            <TextBox x:Name="txtEmail"/>
+            <Button Content="Submit" Margin="0,20,0,0" Click="Button_Click"/>
+        </StackPanel>
+
     </Grid>
 </Window>

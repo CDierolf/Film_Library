@@ -18,7 +18,6 @@ namespace FilmLibrary_FinalProject.models
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string DateOfBirth { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -41,11 +40,10 @@ namespace FilmLibrary_FinalProject.models
         /// <param name="email"></param>
         /// <param name="userName"></param>
         /// <param name="password"></param>
-        public User(string firstName, string lastName, string dob, string email, string userName, string password)
+        public User(string firstName, string lastName, string email, string userName, string password)
         {
             FirstName = firstName;
             LastName = lastName;
-            DateOfBirth = dob;
             Email = email;
             UserName = userName;
             Password = password;
