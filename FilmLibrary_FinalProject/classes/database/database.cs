@@ -29,6 +29,7 @@ namespace FilmLibraryDatabase
                 {
                     conn.CreateTable<User>(); // Only creates a new table if one doesn't exist locally already.
                     conn.Insert(user);
+                    return true;
                 }
             }
             catch (SQLiteException ex)
@@ -36,8 +37,6 @@ namespace FilmLibraryDatabase
                 Console.WriteLine("An exception has occured\n\nMessage: {0}\nSource: {1}", ex.Message, ex.Source);
                 return false;
             }
-
-            return true;
         }
 
         /// <summary>
