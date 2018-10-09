@@ -29,7 +29,7 @@ namespace FilmLibrary_FinalProject.models.validators
 
         public bool IsValidUser()
         {
-            if (!IsValidEmail(Email) || !IsValidPassword(Pass1, Pass2))
+            if (!IsValidEmail() || !IsValidPassword())
             {
                 return false;
             }
@@ -40,11 +40,11 @@ namespace FilmLibrary_FinalProject.models.validators
         }
         
 
-        public bool IsValidEmail(string email)
+        public bool IsValidEmail()
         {
             try
             {
-                MailAddress m = new MailAddress(email);
+                MailAddress m = new MailAddress(Email);
                 return true;
             }catch (FormatException)
             {

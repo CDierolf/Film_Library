@@ -47,9 +47,9 @@
                     Grid.Column="1"
                     Grid.Row="1">
             <TextBlock Text="Username"/>
-            <TextBox />
+            <TextBox x:Name="txtUserName" />
             <TextBlock Text="Password"/>
-            <TextBox />
+            <PasswordBox x:Name="pwdPassword"/>
             <Button x:Name="btnLogin"
                 Height="20"
                     Margin="30,10,30,0"

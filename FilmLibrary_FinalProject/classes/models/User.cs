@@ -1,4 +1,5 @@
 ﻿using FilmLibrary_FinalProject.interfaces;
+using FilmLibraryDatabase;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -47,11 +48,6 @@ namespace FilmLibrary_FinalProject.models
             Email = email;
             UserName = userName;
             Password = password;
-
-            // TODO
-            // Validate and call create user
-            // ValidateUser(...);
-            
         }
         #endregion
 
@@ -64,12 +60,26 @@ namespace FilmLibrary_FinalProject.models
         /// Inherited from the IUserValidator interface
         /// </summary>
         /// <returns>Returns true if credentials are authenticated. False if failed</returns>
-        public bool AuthenticateUser()
+        public bool AuthenticateUser(string userName, string password)
         {
-            // TODO
-            return true;
+            DBConnectionClass db = new DBConnectionClass();
+            if (db.FindLoginData(userName, password))
+                return true;
+            else
+                return false;
+            
         }
 
+        public bool ValidateUserAccount(string email, string username)
+        {
+            DBConnectionClass db = new DBConnectionClass();
+            {
+                if (db.DoesUserExist(email, username))
+                    return true;
+                else
+                    return false;
+            }
+        }
         #endregion
     }
 }

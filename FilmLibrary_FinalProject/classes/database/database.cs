@@ -2,6 +2,7 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace FilmLibraryDatabase
     public class DBConnectionClass
     {
         static string dbName = "FilmDatabase.db";
-        static string dbFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        static string dbFolderPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + dbName;
         static string dbPath = String.Format(dbFolderPath, dbName);
 
 
@@ -62,6 +63,56 @@ namespace FilmLibraryDatabase
                 return false;
             }
             return true;
+        }
+
+        /// <summary>
+        /// Locates the User data in the SQLite database.
+        /// Uses a linq command to find the users data row.
+        /// Compares the passed in password to the password 
+        /// in the users datarow.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="pwd"></param>
+        /// <returns></returns>
+        public bool FindLoginData(string username, string pwd)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(dbPath))
+            {
+                conn.CreateTable<User>();
+                var user = conn.Table<User>().Where(u => u.UserName == username).FirstOrDefault();
+                if (user.Password == pwd)
+                    return true;
+                else
+                    return false;
+            }
+        }
+        /// <summary>
+        /// Checks to see if the account the user is trying to create already
+        /// exists by comparing the username and email of the user to rows 
+        /// already in the database.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public bool DoesUserExist(string email, string username)
+        {
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection(dbPath))
+                {
+
+                    conn.CreateTable<User>();
+                    var user = conn.Table<User>().Where(u => u.UserName == username).FirstOrDefault();
+
+                    if (user.UserName == username || user.Email == email)
+                        return true;
+                    else
+                        return false;
+                }
+            } catch (NullReferenceException)
+            {
+                return false;
+            }
         }
 
 
