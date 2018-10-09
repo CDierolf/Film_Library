@@ -1,4 +1,5 @@
-﻿using FilmLibrary_FinalProject.views;
+﻿using FilmLibrary_FinalProject.models;
+using FilmLibrary_FinalProject.views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,22 +59,36 @@ namespace FilmLibrary_FinalProject
                 movieData.Year + "\nGenre: " + movieData.Genre + "\nPlot: " + movieData.Plot);
 
         }
-
+        /// <summary>
+        /// Authenticate login information.
+        /// Calls User.AuthenticateUser(username, password) which calls
+        /// DbConnectionClass.FindUserData(username, password) to authenticate
+        /// user data.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            //TODO
-            // Authenticate user
-            // Exception handing for invalid user needed.
-            
             LibraryWindow lw = new LibraryWindow();
-            lw.Show();
-            this.Close();
+            User user = new User();
+            if (user.AuthenticateUser(txtUserName.Text, pwdPassword.Password))
+            {
+                lw.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid credentials");
+            }
         }
 
+        /// <summary>
+        /// Open CreateAccountWindow so that the user can create a new account.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreateAcct_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
-            // CreateAccountWindow will take custom user validation exceptions
             CreateAccountWindow caw = new CreateAccountWindow();
             caw.Show();
         }

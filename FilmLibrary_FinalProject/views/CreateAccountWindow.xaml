@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FilmLibrary_FinalProject.views"
         mc:Ignorable="d"
         Title="CreateAccountWindow" Height="600" Width="300" Background="#7E878F" ResizeMode="NoResize">
-    <Grid ShowGridLines="True">
+    <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="6*"/>
@@ -43,6 +43,7 @@
             <Label Content="E-Mail: "/>
             <TextBox x:Name="txtEmail"/>
             <Button Content="Submit" Margin="0,20,0,0" Click="Button_Click"/>
+            <Label x:Name="lblAcctStatus" Margin="0,15,0,0" Height="40" HorizontalContentAlignment="Center"/>
         </StackPanel>
 
     </Grid>
