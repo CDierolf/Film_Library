@@ -76,14 +76,20 @@ namespace FilmLibraryDatabase
         /// <returns></returns>
         public bool FindLoginData(string username, string pwd)
         {
-            using (SQLiteConnection conn = new SQLiteConnection(dbPath))
+            try
             {
-                conn.CreateTable<User>();
-                var user = conn.Table<User>().Where(u => u.UserName == username).FirstOrDefault();
-                if (user.Password == pwd)
-                    return true;
-                else
-                    return false;
+                using (SQLiteConnection conn = new SQLiteConnection(dbPath))
+                {
+                    conn.CreateTable<User>();
+                    var user = conn.Table<User>().Where(u => u.UserName == username).FirstOrDefault();
+                    if (user.Password == pwd)
+                        return true;
+                    else
+                        return false;
+                }
+            } catch (NullReferenceException)
+            {
+                return false;
             }
         }
         /// <summary>
