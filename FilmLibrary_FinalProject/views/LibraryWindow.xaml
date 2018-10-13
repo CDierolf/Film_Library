@@ -49,7 +49,7 @@
             <Button Margin="0,0,0,5">
                 <TextBlock Text="Add New Movie      From API" TextWrapping="Wrap" TextAlignment="Center"/>
             </Button>
-            <Button Margin="0,0,0,5">
+            <Button Margin="0,0,0,5" Click="Button_Click">
                 <TextBlock Text="Add New Movie      Manually" TextWrapping="Wrap" TextAlignment="Center"/>
             </Button>
             <Button Margin="0,0,0,5">
