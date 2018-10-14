@@ -11,26 +11,21 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using FilmLibrary_FinalProject.views;
 
-namespace FilmLibrary_FinalProject
+namespace FilmLibrary_FinalProject.views
 {
     /// <summary>
-    /// Interaction logic for LibraryWindow.xaml
+    /// Interaction logic for AddMovieManualWindow.xaml
     /// </summary>
-    public partial class LibraryWindow : Window
+    public partial class AddMovieManualWindow : Window
     {
-        public LibraryWindow()
+        public AddMovieManualWindow()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddMovieManualWindow newMovieManual = new AddMovieManualWindow();
-            newMovieManual.Show();
-
-
 
         }
     }
