@@ -35,13 +35,14 @@ namespace FilmLibrary_FinalProject.models
         /// <param name="plot"></param>
         /// <param name="actors"></param>
         /// <param name="genre"></param>
-        public Movie(string movieTitle, string releaseYear, string plot, string actors, string genre)
+        public Movie(string movieTitle, string releaseYear, string plot, string actors, string genre, string runTime)
         {
             MovieTitle = movieTitle;
             ReleaseYear = releaseYear;
             Plot = plot;
             Actors = actors;
             Genre = genre;
+            RunTime = runTime;
         }
 
         #endregion

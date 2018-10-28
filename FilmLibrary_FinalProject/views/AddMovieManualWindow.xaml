@@ -38,14 +38,14 @@
             <Label Content="Path " Visibility="Hidden"/>
             <Label Content="Release Year: "/>
             <TextBox x:Name="txtReleaseYear"/>
-            <Label Content="Rating: "/>
-            <TextBox x:Name="txtRated"/>
+            <Label Content="Actors: "/>
+            <TextBox x:Name="txtActors"/>
             <Label Content="Genre: "/>
             <TextBox x:Name="txtGenre"/>
             <Label Content="Runtime (In Minutes): "/>
             <TextBox x:Name="txtRunTime"/>
-            <Label Content="Actors: "/>
-            <TextBox x:Name="txtActors" Height="62"/>
+            <Label Content="Plot: "/>
+            <TextBox x:Name="txtPlot" Height="62"/>
             <Button x:Name="btAddMovieManual" Content="Add Movie" Margin="0,20,0,0" Click="Button_Click" Height="39"/>
             <Label x:Name="lblAcctStatus" Margin="0,15,0,0" Height="40" HorizontalContentAlignment="Center"/>
             

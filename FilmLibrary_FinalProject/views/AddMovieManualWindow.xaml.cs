@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FilmLibrary_FinalProject.models;
+using FilmLibraryDatabase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +28,20 @@ namespace FilmLibrary_FinalProject.views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            DBConnectionClass db = new DBConnectionClass();
+
+            Movie movie = new Movie(txtMovieTitle.Text, txtReleaseYear.Text, txtPlot.Text, txtActors.Text, txtGenre.Text, txtRunTime.Text);
+
+            if (db.AddMovie(movie))
+            {
+                string message = "The movie has been added!";
+                MessageBox.Show(message);
+            }
+            else
+            {
+                string message = "There was an error. Please try again!";
+                MessageBox.Show(message);
+            }
 
         }
     }
