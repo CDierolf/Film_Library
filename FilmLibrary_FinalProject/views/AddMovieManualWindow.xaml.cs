@@ -1,7 +1,9 @@
 ﻿using FilmLibrary_FinalProject.models;
 using FilmLibraryDatabase;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +44,26 @@ namespace FilmLibrary_FinalProject.views
             {
                 string message = "There was an error. Please try again!";
                 MessageBox.Show(message);
+            }
+
+        }
+        private void Image_Click(object sender, RoutedEventArgs e)
+        {
+            DBConnectionClass db = new DBConnectionClass();
+
+            Stream nStream = null;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Select an Image";
+            openFileDialog.Filter = "Image files | *.jpg; *.jpeg; *.png |" +
+                "JPEG (*.jpg, *.jpeg)|*.jpg;*.jpeg|" +
+                "Portable Network Graphic (*.png) | *.png";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                using (nStream)
+                {
+                    image.Source = new BitmapImage(new System.Uri(openFileDialog.FileName));
+                    //ActualHeight = 
+                }
             }
 
         }

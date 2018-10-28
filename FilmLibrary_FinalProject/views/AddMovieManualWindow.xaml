@@ -33,8 +33,17 @@
             <Label Content="Movie Title: "/>
             <TextBox x:Name="txtMovieTitle"/>
             <Label Content="Movie Poster: "/>
-            <Button Content="Upload Image"/>
-            
+            <Button Content="Upload Image" Click="Image_Click"/>
+            <Image Name="image" Margin="8" Height="82" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.5"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
             <Label Content="Path " Visibility="Hidden"/>
             <Label Content="Release Year: "/>
             <TextBox x:Name="txtReleaseYear"/>
@@ -48,7 +57,7 @@
             <TextBox x:Name="txtPlot" Height="62"/>
             <Button x:Name="btAddMovieManual" Content="Add Movie" Margin="0,20,0,0" Click="Button_Click" Height="39"/>
             <Label x:Name="lblAcctStatus" Margin="0,15,0,0" Height="40" HorizontalContentAlignment="Center"/>
-            
+
         </StackPanel>
 
     </Grid>

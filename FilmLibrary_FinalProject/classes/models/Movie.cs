@@ -9,8 +9,6 @@ namespace FilmLibrary_FinalProject.models
 {
     public class Movie
     {
-        #region Class Properties
-        
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string MovieTitle { get; set; }
@@ -18,10 +16,11 @@ namespace FilmLibrary_FinalProject.models
         public string Plot { get; set; }
         public string Actors { get; set; }
         public string Genre { get; set; }
-        #endregion
+        public string RunTime { get; set; }
+
 
         #region Constructors
-        
+
         /// <summary>
         /// Default ctor
         /// </summary>
