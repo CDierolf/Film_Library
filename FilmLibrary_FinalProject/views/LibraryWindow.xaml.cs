@@ -33,5 +33,11 @@ namespace FilmLibrary_FinalProject
 
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddMovieFromAPIWindow newAPIMovie = new AddMovieFromAPIWindow();
+            newAPIMovie.Show();
+        }
     }
 }

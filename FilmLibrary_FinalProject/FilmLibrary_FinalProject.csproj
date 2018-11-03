@@ -81,6 +81,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="views\AddMovieFromAPIWindow.xaml.cs">
+      <DependentUpon>AddMovieFromAPIWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="views\AddMovieManualWindow.xaml.cs">
       <DependentUpon>AddMovieManualWindow.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <DependentUpon>LibraryWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Controls\FilmDataControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\AddMovieFromAPIWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
