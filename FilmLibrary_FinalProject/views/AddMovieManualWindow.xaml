@@ -30,8 +30,6 @@
                 BorderThickness="2"
                 CornerRadius="5"/>
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="5" VerticalAlignment="Center">
-            <Label Content="Movie Title: "/>
-            <TextBox x:Name="txtMovieTitle"/>
             <Label Content="Movie Poster: "/>
             <Button Content="Upload Image" Click="Image_Click"/>
             <Image Name="image" Margin="8" Height="82" RenderTransformOrigin="0.5,0.5">
@@ -45,6 +43,8 @@
                 </Image.RenderTransform>
             </Image>
             <Label Content="Path " Visibility="Hidden"/>
+            <Label Content="Movie Title: "/>
+            <TextBox x:Name="txtMovieTitle"/>
             <Label Content="Release Year: "/>
             <TextBox x:Name="txtReleaseYear"/>
             <Label Content="Actors: "/>
