@@ -46,7 +46,7 @@
         <StackPanel Grid.Column="0"
                     Grid.Row="1"
                     Margin="15,5,15,0">
-            <Button Margin="0,0,0,5">
+            <Button Margin="0,0,0,5" HorizontalAlignment="Right" Width="100" Click="Button_Click_1">
                 <TextBlock Text="Add New Movie      From API" TextWrapping="Wrap" TextAlignment="Center"/>
             </Button>
             <Button Margin="0,0,0,5" Click="Button_Click">
