@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FilmLibrary_FinalProject.models;
 using FilmLibrary_FinalProject.views;
+using FilmLibraryDatabase;
 
 namespace FilmLibrary_FinalProject
 {
@@ -23,6 +25,7 @@ namespace FilmLibrary_FinalProject
         public LibraryWindow()
         {
             InitializeComponent();
+            ShowMovies();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,6 +41,21 @@ namespace FilmLibrary_FinalProject
         {
             AddMovieFromAPIWindow newAPIMovie = new AddMovieFromAPIWindow();
             newAPIMovie.Show();
+        }
+
+        public void ShowMovies()
+        {
+            List<Movie> movies;
+            DBConnectionClass db = new DBConnectionClass();
+            movies = db.GetMovies();
+
+            if (movies != null)
+            {
+                foreach (var m in movies)
+                {
+                    lstVMovies.Items.Add(m);
+                }
+            }
         }
     }
 }
