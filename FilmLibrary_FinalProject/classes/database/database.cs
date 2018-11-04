@@ -63,6 +63,28 @@ namespace FilmLibraryDatabase
             }
             return true;
         }
+        /// <summary>
+        /// Gets the current list of added movies and returns them in the form of a list
+        /// for display
+        /// </summary>
+        /// <returns>List<Movie></returns>
+        public List<Movie> GetMovies()
+        {
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection(dbPath))
+                {
+                    conn.CreateTable<Movie>();
+                    var movies = conn.Table<Movie>().ToList<Movie>();
+                    return movies;
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine("An exception has occured");
+                return null;
+            }
+        }
 
         /// <summary>
         /// Locates the User data in the SQLite database.

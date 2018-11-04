@@ -29,13 +29,50 @@
                    Grid.ColumnSpan="3"
                    Grid.RowSpan="3" Margin="10,0,10,10"
             />
-        <ListView 
-            Grid.Column="1"
+        <ListView Grid.Column="1"
             Grid.Row="1"
             Grid.ColumnSpan="2"
             Grid.RowSpan="2"
             Margin="0,0,20,20"
-            />
+            x:Name="lstVMovies">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Border BorderThickness="2" BorderBrush="Black">
+                            <StackPanel Margin="5" >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0"
+                               Text="{Binding MovieTitle}"
+                               FontSize="20"
+                               FontWeight="ExtraBlack"/>
+                                    <TextBlock Grid.Column="1"
+                               Text="{Binding Genre}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               FontSize="14"
+                               FontWeight="Bold"/>
+                                </Grid>
+
+                                <TextBlock Text="{Binding ReleaseYear}" 
+                           FontSize="16"
+                           Foreground="DodgerBlue"/>
+                                <Separator Width="250"
+                           HorizontalAlignment="Left"/>
+                                <TextBlock Text="{Binding Plot}"
+                           TextWrapping="WrapWithOverflow"/>
+
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
 
         <Rectangle Height="470"

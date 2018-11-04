@@ -26,6 +26,7 @@ namespace FilmLibrary_FinalProject.views
         public AddMovieManualWindow()
         {
             InitializeComponent();
+            
         }
 
         // Dev Decoste
