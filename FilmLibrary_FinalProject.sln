@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmLibrary_FinalProject", "FilmLibrary_FinalProject\FilmLibrary_FinalProject.csproj", "{1CA044C2-6262-42A0-BEDA-7FC4F0DED24F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieAPI", "MovieAPI\MovieAPI.csproj", "{4CE93974-895A-466C-A94A-208E4C790EAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieAPI", "\\Mac\Home\Desktop\SDEV360_FinalProject-master\MovieAPI\MovieAPI.csproj", "{4CE93974-895A-466C-A94A-208E4C790EAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
