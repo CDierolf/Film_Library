@@ -11,6 +11,7 @@ namespace FilmLibraryDatabase
 {
     public class DBConnectionClass
     {
+        // Coments
         static string dbName = "FilmDatabase.db";
         static string dbFolderPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + dbName;
         static string dbPath = String.Format(dbFolderPath, dbName);
