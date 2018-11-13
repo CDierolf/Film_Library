@@ -22,9 +22,13 @@ namespace FilmLibrary_FinalProject
     /// </summary>
     public partial class LibraryWindow : Window
     {
+        List<Movie> movies;
         public LibraryWindow()
         {
             InitializeComponent();
+            DBConnectionClass db = new DBConnectionClass();
+            movies = new List<Movie>();
+            movies = db.GetMovies();
             ShowMovies();
         }
 
@@ -32,9 +36,6 @@ namespace FilmLibrary_FinalProject
         {
             AddMovieManualWindow newMovieManual = new AddMovieManualWindow();
             newMovieManual.Show();
-
-
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -51,11 +52,17 @@ namespace FilmLibrary_FinalProject
 
             if (movies != null)
             {
-                foreach (var m in movies)
-                {
-                    lstVMovies.Items.Add(m);
-                }
+                lstVMovies.ItemsSource = movies;
             }
+        }
+
+        private void txtSearchMovies_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox searchTextBox = sender as TextBox;
+            var filteredList = movies.Where(m => m.MovieTitle.Contains(searchTextBox.Text)).ToList();
+
+            if (filteredList != null)
+                lstVMovies.ItemsSource = filteredList;
         }
     }
 }
