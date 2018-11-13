@@ -142,7 +142,5 @@ namespace FilmLibraryDatabase
                 return false;
             }
         }
-
-
     }
 }
