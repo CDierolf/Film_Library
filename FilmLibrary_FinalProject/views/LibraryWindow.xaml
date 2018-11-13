@@ -29,6 +29,12 @@
                    Grid.ColumnSpan="3"
                    Grid.RowSpan="3" Margin="10,0,10,10"
             />
+
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <TextBox Text="Search movie library..."
+                     Margin="190,15,0,0" Width="200"
+                     x:Name="txtSearchMovies"/>
+        </StackPanel>
         <ListView Grid.Column="1"
                 Grid.Row="1"
                 Grid.ColumnSpan="2"

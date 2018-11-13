@@ -131,7 +131,6 @@ namespace FilmLibraryDatabase
 
                     conn.CreateTable<User>();
                     var user = conn.Table<User>().Where(u => u.UserName == username).FirstOrDefault();
-
                     if (user.UserName == username || user.Email == email)
                         return true;
                     else
