@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace MovieAPI.models
 {
+    /// <summary>
+    /// Movie class file
+    /// Christopher K. Dierolf
+    /// </summary>
     public class Rating
     {
         public string Source { get; set; }

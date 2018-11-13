@@ -30,6 +30,7 @@ namespace FilmLibrary_FinalProject.views
 
         /// <summary>
         /// // Creates a new account after validating and ensuring the account doesn't already exist.
+        /// Christopher K. Dierolf
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

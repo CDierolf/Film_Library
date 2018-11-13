@@ -15,6 +15,10 @@ using FilmLibrary_FinalProject.models;
 using FilmLibrary_FinalProject.views;
 using FilmLibraryDatabase;
 
+
+/// <summary>
+/// Behind code for LibraryWindow
+/// </summary>
 namespace FilmLibrary_FinalProject
 {
     /// <summary>
@@ -22,13 +26,17 @@ namespace FilmLibrary_FinalProject
     /// </summary>
     public partial class LibraryWindow : Window
     {
+        // Make the list accessible throughout the window.
         List<Movie> movies;
         public LibraryWindow()
         {
             InitializeComponent();
+            // Christopher Dierolf
             DBConnectionClass db = new DBConnectionClass();
+
             movies = new List<Movie>();
-            movies = db.GetMovies();
+            movies = db.GetMovies(); // Get the movies from the database.
+
             ShowMovies();
         }
 
@@ -44,18 +52,18 @@ namespace FilmLibrary_FinalProject
             newAPIMovie.Show();
         }
 
+        // Function that binds the listbox itemsource to the movies list
+        // Christopher Dierolf
         public void ShowMovies()
         {
-            List<Movie> movies;
-            DBConnectionClass db = new DBConnectionClass();
-            movies = db.GetMovies();
-
             if (movies != null)
             {
                 lstVMovies.ItemsSource = movies;
             }
         }
 
+        //Filter the listbox of movies
+        // Christopher Dierolf
         private void txtSearchMovies_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox searchTextBox = sender as TextBox;

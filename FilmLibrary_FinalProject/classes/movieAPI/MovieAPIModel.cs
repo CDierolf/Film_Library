@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace MovieAPI.models
 {
+    /// <summary>
+    /// Christopher K. Dierolf
+    /// </summary>
     public class MovieAPIModel
     {
         public const string API_KEY = "46495d3e";

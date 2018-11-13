@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace FilmLibraryDatabase
 {
+    /// <summary>
+    /// Handles all DB Connection Methods including CRUD methods.
+    /// Christopher K. Dierolf
+    /// </summary>
     public class DBConnectionClass
     {
         // Comments
