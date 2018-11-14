@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace FilmLibraryDatabase
 {
+    /// <summary>
+    /// Handles all DB Connection Methods including CRUD methods.
+    /// Christopher K. Dierolf
+    /// </summary>
     public class DBConnectionClass
     {
         // Comments
@@ -65,7 +69,7 @@ namespace FilmLibraryDatabase
             return true;
         }
         /// <summary>
-        /// Gets the current list of added movies and returns them in the form of a list
+        /// Gets the current list of added movies and returns them in a list ordered by movie title
         /// for display
         /// </summary>
         /// <returns>List<Movie></returns>
@@ -76,7 +80,7 @@ namespace FilmLibraryDatabase
                 using (SQLiteConnection conn = new SQLiteConnection(dbPath))
                 {
                     conn.CreateTable<Movie>();
-                    var movies = conn.Table<Movie>().ToList<Movie>();
+                    var movies = conn.Table<Movie>().ToList<Movie>().OrderBy(m => m.MovieTitle).ToList();
                     return movies;
                 }
             }

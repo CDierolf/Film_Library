@@ -15,6 +15,10 @@ using FilmLibrary_FinalProject.models;
 using FilmLibrary_FinalProject.views;
 using FilmLibraryDatabase;
 
+
+/// <summary>
+/// Behind code for LibraryWindow
+/// </summary>
 namespace FilmLibrary_FinalProject
 {
     /// <summary>
@@ -22,9 +26,17 @@ namespace FilmLibrary_FinalProject
     /// </summary>
     public partial class LibraryWindow : Window
     {
+        // Make the list accessible throughout the window.
+        List<Movie> movies;
         public LibraryWindow()
         {
             InitializeComponent();
+            // Christopher Dierolf
+            DBConnectionClass db = new DBConnectionClass();
+
+            movies = new List<Movie>();
+            movies = db.GetMovies(); // Get the movies from the database.
+
             ShowMovies();
         }
 
@@ -32,9 +44,6 @@ namespace FilmLibrary_FinalProject
         {
             AddMovieManualWindow newMovieManual = new AddMovieManualWindow();
             newMovieManual.Show();
-
-
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -43,19 +52,30 @@ namespace FilmLibrary_FinalProject
             newAPIMovie.Show();
         }
 
+        // Function that binds the listbox itemsource to the movies list
+        // Christopher Dierolf
         public void ShowMovies()
         {
-            List<Movie> movies;
-            DBConnectionClass db = new DBConnectionClass();
-            movies = db.GetMovies();
-
             if (movies != null)
             {
-                foreach (var m in movies)
-                {
-                    lstVMovies.Items.Add(m);
-                }
+                lstVMovies.ItemsSource = movies;
             }
+        }
+
+        //Filter the listbox of movies
+        // Christopher Dierolf
+        private void txtSearchMovies_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox searchTextBox = sender as TextBox;
+
+            // var filteredList = movies.Where(m => m.MovieTitle.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
+
+            var filteredList = (from m in movies
+                                where m.MovieTitle.ToLower().Contains(searchTextBox.Text.ToLower())
+                                select m).ToList();
+
+            if (filteredList != null)
+                lstVMovies.ItemsSource = filteredList;
         }
     }
 }
