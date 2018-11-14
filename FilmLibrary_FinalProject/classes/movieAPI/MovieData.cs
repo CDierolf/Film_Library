@@ -10,12 +10,6 @@ namespace MovieAPI.models
     /// Movie class file
     /// Christopher K. Dierolf
     /// </summary>
-    public class Rating
-    {
-        public string Source { get; set; }
-        public string Value { get; set; }
-    }
-
     public class MovieData
     {
         public string Title { get; set; }
@@ -31,7 +25,6 @@ namespace MovieAPI.models
         public string Language { get; set; }
         public string Country { get; set; }
         public string Awards { get; set; }
-        public string Poster { get; set; }
         public string Metascore { get; set; }
         public string imdbRating { get; set; }
         public string imdbVotes { get; set; }
@@ -42,7 +35,5 @@ namespace MovieAPI.models
         public string Production { get; set; }
         public string Website { get; set; }
         public string Response { get; set; }
-
-        public List<Rating> Ratings { get; set; }
     }
 }
