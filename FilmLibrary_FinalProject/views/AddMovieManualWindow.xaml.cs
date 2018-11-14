@@ -48,25 +48,5 @@ namespace FilmLibrary_FinalProject.views
             }
 
         }
-        private void Image_Click(object sender, RoutedEventArgs e)
-        {
-            DBConnectionClass db = new DBConnectionClass();
-
-            Stream nStream = null;
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Select an Image";
-            openFileDialog.Filter = "Image files | *.jpg; *.jpeg; *.png |" +
-                "JPEG (*.jpg, *.jpeg)|*.jpg;*.jpeg|" +
-                "Portable Network Graphic (*.png) | *.png";
-            if (openFileDialog.ShowDialog() == true)
-            {
-                using (nStream)
-                {
-                    image.Source = new BitmapImage(new System.Uri(openFileDialog.FileName));
-                    //ActualHeight = 
-                }
-            }
-
-        }
     }
 }

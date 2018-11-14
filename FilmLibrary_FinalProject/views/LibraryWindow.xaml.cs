@@ -67,7 +67,12 @@ namespace FilmLibrary_FinalProject
         private void txtSearchMovies_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox searchTextBox = sender as TextBox;
-            var filteredList = movies.Where(m => m.MovieTitle.Contains(searchTextBox.Text)).ToList();
+
+            // var filteredList = movies.Where(m => m.MovieTitle.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
+
+            var filteredList = (from m in movies
+                                where m.MovieTitle.ToLower().Contains(searchTextBox.Text.ToLower())
+                                select m).ToList();
 
             if (filteredList != null)
                 lstVMovies.ItemsSource = filteredList;
