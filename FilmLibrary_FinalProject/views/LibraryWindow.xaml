@@ -40,7 +40,9 @@
                 Grid.ColumnSpan="2"
                 Grid.RowSpan="2"
                 Margin="0,0,20,20"
-                x:Name="lstVMovies">
+                x:Name="lstVMovies"
+                SelectionChanged="lstVMovies_SelectionChanged"
+                >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid HorizontalAlignment="Stretch">

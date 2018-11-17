@@ -11,6 +11,8 @@ using System.Windows;
 
 namespace FilmLibrary_FinalProject.models.validators
 {
+    // Implementation of the UserValidator class
+    // Christopher Dierolf
     public class UserValidator : IUserValidator
     {
         public UserValidator(string email, string username, string pass1, string pass2)
@@ -26,7 +28,11 @@ namespace FilmLibrary_FinalProject.models.validators
         public string Pass1 { get; set; }
         public string Pass2 { get; set; }
 
-
+        /// <summary>
+        /// Validates a user based on a valid email and password
+        /// Christopher Dierolf
+        /// </summary>
+        /// <returns></returns>
         public bool IsValidUser()
         {
             if (!IsValidEmail() || !IsValidPassword())
@@ -39,7 +45,11 @@ namespace FilmLibrary_FinalProject.models.validators
             }
         }
         
-
+        /// <summary>
+        /// Validates an email address using the MailAddress object
+        /// Christopher Dierolf
+        /// </summary>
+        /// <returns></returns>
         public bool IsValidEmail()
         {
             try
@@ -53,6 +63,11 @@ namespace FilmLibrary_FinalProject.models.validators
             }
         }
 
+        /// <summary>
+        /// Ensures that the user's password is valid based on the comparison of two entered passwords.
+        /// Christopher Dierolf
+        /// </summary>
+        /// <returns></returns>
         public bool IsValidPassword()
         {
             if (Pass1 == Pass2)

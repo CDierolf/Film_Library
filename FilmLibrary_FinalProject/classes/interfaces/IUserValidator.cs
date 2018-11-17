@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace FilmLibrary_FinalProject.interfaces
 {
+    // User validator interface
+    // Christopher Dierolf
     interface IUserValidator
     {
         bool IsValidEmail();

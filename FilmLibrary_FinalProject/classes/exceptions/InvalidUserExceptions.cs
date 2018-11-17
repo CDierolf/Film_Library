@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace FilmLibrary_FinalProject.models
 {
+    // User Validator Exception class
+    // Christopher Dierolf
     public class InvalidDateException : Exception
     {
         public InvalidDateException() { }

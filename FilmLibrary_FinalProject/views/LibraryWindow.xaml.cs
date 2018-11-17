@@ -77,5 +77,18 @@ namespace FilmLibrary_FinalProject
             if (filteredList != null)
                 lstVMovies.ItemsSource = filteredList;
         }
+
+        // Get the data from the listview selection
+        // Christopher Dierolf
+        private void lstVMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Movie movie = new Movie();
+            if (lstVMovies.SelectedItems.Count > 0)
+            {
+                var items = lstVMovies.SelectedItems[0];
+                movie = (Movie)items;
+                MessageBox.Show(movie.MovieTitle);
+            }
+        }
     }
 }
