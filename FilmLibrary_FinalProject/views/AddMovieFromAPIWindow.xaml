@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilmLibrary_FinalProject.views"
         mc:Ignorable="d"
-        Title="Add New Movie - From API" Height="360.141" Width="700" Background="#7E878F" ResizeMode="NoResize">
+        Title="Add New Movie - From API" Height="420.141" Width="700" Background="#7E878F" ResizeMode="NoResize">
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="55*"/>
@@ -14,37 +14,108 @@
             <ColumnDefinition Width="87*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height=".02*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height="2.5*"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Add New Movie From API"
-                   Grid.Row="0"
+                   Grid.Row="1"
                    Grid.Column="2"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   FontSize="30" Margin="110,37,76,207" Grid.RowSpan="2"/>
-        <Border Grid.Row="1"
+                   FontSize="30"/>
+
+        <!-- Top Border -->
+        <Border Grid.Row="2"
                 Grid.Column="2"
                 BorderBrush="White"
                 BorderThickness="2"
-                CornerRadius="5" Margin="0,72,0,75"/>
-        <StackPanel Grid.Row="1" Grid.Column="2" Margin="5,102,5,101" VerticalAlignment="Center">
-            <Label Content="Title: " RenderTransformOrigin="0.497,-3.423"/>
+                CornerRadius="5"/>
 
-        </StackPanel>
-        <TextBox x:Name="txtAPIMovieTitle" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" Grid.Column="2" Margin="46,107,0,0" Grid.Row="1"/>
+        <!--Bottom border-->
+        <Border Grid.Row="4"
+                Grid.Column="2"
+                BorderBrush="White"
+                BorderThickness="2"
+                CornerRadius="5" Margin="0,5,0,5"/>
 
-        <Label Content="Year: " RenderTransformOrigin="0.497,-3.423" Grid.Column="2" Margin="178,106,277,100" Grid.Row="1"/>
-        <TextBox x:Name="txtAPIMovieYear" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="52" Grid.Column="2" Margin="219,106,0,0" Grid.Row="1"/>
-        <Label Content="Plot: " HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Margin="282,105,0,0" Grid.Row="1"/>
-        <ComboBox x:Name="CBAPIPlotLength" HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Grid.Column="2" Margin="317,106,0,0" Grid.Row="1">
+        <Label Content="Title: " 
+               Grid.Column="2"
+               Grid.Row="2"
+               VerticalAlignment="Center"/>
+
+        <TextBox x:Name="txtAPIMovieTitle" 
+                 VerticalAlignment="Center"
+                 Height="23" 
+                 TextWrapping="Wrap" 
+                 Text=" "
+                 Width="120" 
+                 Margin="0,0,335,0"
+                 Grid.Column="2" 
+                 Grid.Row="2"/>
+
+        <Label Content="Year: " RenderTransformOrigin="0.497,-3.423" 
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Grid.Column="2" Margin="0,0,150,0" Grid.Row="2"/>
+
+        <TextBox x:Name="txtAPIMovieYear" 
+                 HorizontalAlignment="Center" Height="23"
+                 TextWrapping="Wrap" Text=" " 
+                 VerticalAlignment="center" Width="52" 
+                 Grid.Column="2" Margin="0,0,65,0"
+                 Grid.Row="2"/>
+
+        <Label Content="Plot: " HorizontalAlignment="Center" 
+               VerticalAlignment="Center" Grid.Column="2" 
+               Margin="50,0,0,0" Grid.Row="2"/>
+
+        <ComboBox x:Name="CBAPIPlotLength" 
+                  HorizontalAlignment="right" 
+                  VerticalAlignment="center" Width="59" 
+                  Grid.Column="2" Margin="0,0,165,0" 
+                  Grid.Row="2">
+
             <ComboBoxItem Content="Short"/>
             <ComboBoxItem Content="Full"/>
+
         </ComboBox>
-        <Button x:Name="btAPISearch" Click="btAPISearch_Click" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="57" Grid.Column="2" Margin="395,103,0,0" Grid.Row="1" Background="#FF2251F1" FontWeight="Bold" Height="26"/>
-        <Button x:Name="btAPIReset" Content="Reset" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" Grid.Column="2" Margin="462,104,0,0" Grid.Row="1" Height="25"/>
+
+        <Button x:Name="btAPISearch" Click="btAPISearch_Click" 
+                Content="Search" 
+                HorizontalAlignment="Right" VerticalAlignment="Center" 
+                Width="57" Grid.Column="2" Margin="0,0,80,0" 
+                Grid.Row="2" Background="#FF2251F1" 
+                FontWeight="Bold" Height="26"/>
+
+        <Button x:Name="btAPIReset" Content="Reset"
+                HorizontalAlignment="Right" VerticalAlignment="Center"
+                Width="44" Grid.Column="2" Margin="0,0,20,0" 
+                Grid.Row="2" Height="25"/>
+
+        <!--LOWER BOARDER AREA OF PAGE. THIS IS FOR MOVIE DATA...EVENTUALLY...MAYBE -->
+        <!-- These labels and textblocks are incomplete, they do not line up quite yet-->
+
+        <StackPanel Grid.Row="4" Grid.Column="2">
+            <Label Content="Title: " />
+            <Label Content="Year Released: "/>
+            <Label Content="Genre: "/>
+            <Label Content="Writer: "/>
+            <Label Content="Plot: "/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="2">
+            <TextBlock x:Name="apiTitleText" Margin="100,10,10,10"/>
+            <TextBlock x:Name="apiYearText" Margin="5"/>
+            <TextBlock Name="apiGenreText" Margin="5"/>
+            <TextBlock Name="apiWriterText" Margin="5"/>
+            <TextBlock Name="apiPlotText" Margin="5"/>
+        </StackPanel>
+
+
 
     </Grid>
 </Window>

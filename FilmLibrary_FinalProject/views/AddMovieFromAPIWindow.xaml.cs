@@ -41,16 +41,22 @@ namespace FilmLibrary_FinalProject.views
             } while (cont != 0);
         }
 
-        public static async void GetMovieData(string movieTitle)
+        public async void GetMovieData(string movieTitle)
         {
             MovieAPIModel movieVM = new MovieAPIModel();
             MovieData movieData = new MovieData();
 
             movieData = await movieVM.GetMovieDataAsync(movieTitle);
 
-            MessageBox.Show("Here are your results:\n " +
-                "Title: " + movieData.Title + " \n Year Released: " + movieData.Year + " \n Genre: " + movieData.Genre +
-                " \n Writer: " + movieData.Writer + " \n Plot: " + movieData.Plot);
+            txtAPIMovieTitle.Text = movieData.Title;
+            apiYearText.Text = movieData.Year;
+            apiWriterText.Text = movieData.Writer;
+            apiPlotText.Text = movieData.Plot;
+            apiGenreText.Text = movieData.Genre;
+
+            //MessageBox.Show("Here are your results:\n " +
+            //  "Title: " + movieData.Title + " \n Year Released: " + movieData.Year + " \n Genre: " + movieData.Genre +
+            //  " \n Writer: " + movieData.Writer + " \n Plot: " + movieData.Plot);
         }
 
         private void btAPISearch_Click(object sender, RoutedEventArgs e)
