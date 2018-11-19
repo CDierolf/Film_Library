@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FilmLibrary_FinalProject.models;
 using FilmLibrary_FinalProject.views;
@@ -78,7 +79,7 @@ namespace FilmLibrary_FinalProject
                 lstVMovies.ItemsSource = filteredList;
         }
 
-        // Get the data from the listview selection
+        // Get the data from the listview selection and pass it to the MovieDetailsWindow
         // Christopher Dierolf
         private void lstVMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -87,7 +88,14 @@ namespace FilmLibrary_FinalProject
             {
                 var items = lstVMovies.SelectedItems[0];
                 movie = (Movie)items;
-                MessageBox.Show(movie.MovieTitle);
+
+                // Test
+                //MessageBox.Show(movie.MovieTitle);
+
+                // Open the MovieDetailsWindow
+                MovieDetailsWindow mdw = new MovieDetailsWindow(movie);
+                mdw.Show();
+                // Pass the movie object from the listview to the new window.
             }
         }
     }
