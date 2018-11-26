@@ -44,7 +44,7 @@ namespace FilmLibrary_FinalProject
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddMovieManualWindow newMovieManual = new AddMovieManualWindow();
-            newMovieManual.Show();
+            newMovieManual.ShowDialog();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
