@@ -69,7 +69,7 @@ namespace FilmLibraryDatabase
             return true;
         }
         /// <summary>
-        /// Insert movie into local database.
+        /// IDeletes a movie from the database as indicated by its title and correspoinding release year.
         /// </summary>
         /// <param name="movie">Accepts a movie object.</param>
         /// <returns>true if successfull, false if unsuccessful</returns>
@@ -85,8 +85,6 @@ namespace FilmLibraryDatabase
                     var delMovie = conn.Table<Movie>().Where(m => m.MovieTitle == movie.MovieTitle && movie.ReleaseYear == movie.ReleaseYear).FirstOrDefault();
 
                     conn.Delete(movie);
-
-
                 }
             }
             catch (SQLiteException ex)
