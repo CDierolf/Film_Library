@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:FilmLibrary_FinalProject.views"
         mc:Ignorable="d"
         Title="Add New Movie - From API" Height="420.141" Width="700" Background="#7E878F" ResizeMode="NoResize">
+    <!-- George -->
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="55*"/>
@@ -84,6 +85,10 @@
 
         </ComboBox>
 
+        <Button x:Name="btAPIAdd" Content="Add Movie" Click="btAPIAdd_Click"
+                Grid.Column="3" Grid.Row="4"
+                Margin="5,85,5,85"/>
+
         <Button x:Name="btAPISearch" Click="btAPISearch_Click" 
                 Content="Search" 
                 HorizontalAlignment="Right" VerticalAlignment="Center" 
@@ -91,7 +96,7 @@
                 Grid.Row="2" Background="#FF2251F1" 
                 FontWeight="Bold" Height="26"/>
 
-        <Button x:Name="btAPIReset" Content="Reset"
+        <Button x:Name="btAPIReset" Content="Reset" Click="btAPIReset_Click"
                 HorizontalAlignment="Right" VerticalAlignment="Center"
                 Width="44" Grid.Column="2" Margin="0,0,20,0" 
                 Grid.Row="2" Height="25"/>
@@ -100,19 +105,21 @@
         <!-- These labels and textblocks are incomplete, they do not line up quite yet-->
 
         <StackPanel Grid.Row="4" Grid.Column="2">
-            <Label Content="Title: " />
-            <Label Content="Year Released: "/>
-            <Label Content="Genre: "/>
-            <Label Content="Writer: "/>
-            <Label Content="Plot: "/>
+            <Label Content="Title: " FontWeight="Bold" />
+            <Label Content="Year Released: " FontWeight="Bold"/>
+            <Label Content="Genre: " FontWeight="Bold"/>
+            <Label Content="Actors: " FontWeight="Bold"/>
+            <Label Content="Runtime:" FontWeight="Bold"/>
+            <Label Content="Plot: " FontWeight="Bold"/>
         </StackPanel>
 
         <StackPanel Grid.Row="4" Grid.Column="2">
-            <TextBlock x:Name="apiTitleText" Margin="100,10,10,10"/>
-            <TextBlock x:Name="apiYearText" Margin="5"/>
-            <TextBlock Name="apiGenreText" Margin="5"/>
-            <TextBlock Name="apiWriterText" Margin="5"/>
-            <TextBlock Name="apiPlotText" Margin="5"/>
+            <TextBlock x:Name="apiTitleText" Margin="40,5,0,0"/>
+            <TextBlock x:Name="apiYearText" Margin="90,11,0,0"/>
+            <TextBlock x:Name="apiGenreText" Margin="50,10,0,0"/>
+            <TextBlock x:Name="apiActorstext" Margin="50,10,0,0"/>
+            <TextBlock x:Name="apiRunTimeText" Margin="50,10,0,0"/>
+            <TextBlock x:Name="apiPlotText" Margin="38,10,0,0" TextWrapping="Wrap"/>
         </StackPanel>
 
 

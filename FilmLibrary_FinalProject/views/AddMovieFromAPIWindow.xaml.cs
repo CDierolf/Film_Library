@@ -1,5 +1,7 @@
 ﻿using MovieAPI.models;
 using System;
+using FilmLibrary_FinalProject.models;
+using FilmLibraryDatabase;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +19,7 @@ namespace FilmLibrary_FinalProject.views
 {
     /// <summary>
     /// Interaction logic for AddMovieFromAPIWindow.xaml
-    /// </summary>
+    /////// </summary>
     public partial class AddMovieFromAPIWindow : Window
     {
         public AddMovieFromAPIWindow()
@@ -48,9 +50,10 @@ namespace FilmLibrary_FinalProject.views
 
             movieData = await movieVM.GetMovieDataAsync(movieTitle);
 
-            txtAPIMovieTitle.Text = movieData.Title;
+            apiTitleText.Text = movieData.Title;
             apiYearText.Text = movieData.Year;
-            apiWriterText.Text = movieData.Writer;
+            apiActorstext.Text = movieData.Actors;
+            apiRunTimeText.Text = movieData.Runtime;
             apiPlotText.Text = movieData.Plot;
             apiGenreText.Text = movieData.Genre;
 
@@ -66,5 +69,37 @@ namespace FilmLibrary_FinalProject.views
             else
                 MessageBox.Show("Movie title cannot be blank");
         }
+
+        // Jason George
+        private void btAPIReset_Click(object sender, RoutedEventArgs e)
+        {
+            txtAPIMovieTitle = null;
+
+            apiTitleText.Text = "";
+            apiYearText.Text = "";
+            apiActorstext.Text = "";
+            apiRunTimeText.Text = "";
+            apiPlotText.Text = "";
+            apiGenreText.Text = "";
+        }
+
+        private void btAPIAdd_Click(object sender, RoutedEventArgs e)
+        {
+            DBConnectionClass db = new DBConnectionClass();
+
+            Movie movie = new Movie(apiTitleText.Text, apiYearText.Text, apiPlotText.Text, apiActorstext.Text, apiGenreText.Text, apiRunTimeText.Text);
+
+            if (db.AddMovie(movie))
+            {
+                string message = "The movie has been added!";
+                MessageBox.Show(message);
+            }
+            else
+            {
+                string message = "There was an error. Please try again!";
+                MessageBox.Show(message);
+            }
+        }
+
     }
 }
