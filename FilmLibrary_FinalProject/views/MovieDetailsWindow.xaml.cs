@@ -1,4 +1,5 @@
 ﻿using FilmLibrary_FinalProject.models;
+using FilmLibraryDatabase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace FilmLibrary_FinalProject.views
     public partial class MovieDetailsWindow : Window
     {
         Movie movie = new Movie();
+        DBConnectionClass db = new DBConnectionClass();
         public MovieDetailsWindow(Movie _movie)
         {
             InitializeComponent();
@@ -30,6 +32,9 @@ namespace FilmLibrary_FinalProject.views
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(movie.MovieTitle);
+            MessageBox.Show("Deleting..." + movie.MovieTitle);
+            db.DeleteMovie(movie);
+            MessageBox.Show("Movie Deleted");
         }
     }
 }

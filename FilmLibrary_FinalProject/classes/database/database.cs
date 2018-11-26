@@ -69,6 +69,34 @@ namespace FilmLibraryDatabase
             return true;
         }
         /// <summary>
+        /// Insert movie into local database.
+        /// </summary>
+        /// <param name="movie">Accepts a movie object.</param>
+        /// <returns>true if successfull, false if unsuccessful</returns>
+        public bool DeleteMovie(Movie movie)
+        {
+            try
+            {
+                // Because only one connection can be open at a time, by using the Using statement, you don't have 
+                // to continually ensure your connections are closed manually.
+                using (SQLiteConnection conn = new SQLiteConnection(dbPath))
+                {
+                    conn.CreateTable<Movie>();
+                    var delMovie = conn.Table<Movie>().Where(m => m.MovieTitle == movie.MovieTitle && movie.ReleaseYear == movie.ReleaseYear).FirstOrDefault();
+
+                    conn.Delete(movie);
+
+
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine("An exception has occured\n\nMessage: {0}\nSource: {1}", ex.Message, ex.Source);
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
         /// Gets the current list of added movies and returns them in a list ordered by movie title
         /// for display
         /// </summary>
