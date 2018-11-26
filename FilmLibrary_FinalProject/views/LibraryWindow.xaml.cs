@@ -33,30 +33,43 @@ namespace FilmLibrary_FinalProject
         {
             InitializeComponent();
             // Christopher Dierolf
-            DBConnectionClass db = new DBConnectionClass();
 
             movies = new List<Movie>();
-            movies = db.GetMovies(); // Get the movies from the database.
-
             ShowMovies();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddMovieManualWindow newMovieManual = new AddMovieManualWindow();
             newMovieManual.ShowDialog();
+
+            // Refresh the movies list.
+            ShowMovies();
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             AddMovieFromAPIWindow newAPIMovie = new AddMovieFromAPIWindow();
-            newAPIMovie.Show();
+            newAPIMovie.ShowDialog();
+
+            // Refresh the movie list.
+            ShowMovies();
+
         }
 
-        // Function that binds the listbox itemsource to the movies list
+        private void RefreshMovies()
+        {
+            DBConnectionClass db = new DBConnectionClass();
+            movies = db.GetMovies(); // Get the movies from the database.
+        }
+
+        // Function that binds the listbox itemsource to the movies list after refreshing the movies list.
         // Christopher Dierolf
         public void ShowMovies()
         {
+            RefreshMovies();
             if (movies != null)
             {
                 lstVMovies.ItemsSource = movies;
@@ -94,8 +107,11 @@ namespace FilmLibrary_FinalProject
 
                 // Open the MovieDetailsWindow
                 MovieDetailsWindow mdw = new MovieDetailsWindow(movie);
-                mdw.Show();
-                // Pass the movie object from the listview to the new window.
+                mdw.ShowDialog();
+
+                // Refresh the movie list when the MovieDetailsWindow is closed.
+                movies = new List<Movie>();
+                ShowMovies();
             }
         }
     }
