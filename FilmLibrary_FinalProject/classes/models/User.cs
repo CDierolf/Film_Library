@@ -58,6 +58,7 @@ namespace FilmLibrary_FinalProject.models
         /// Compares the user entered credentials against
         /// the local database user table.
         /// Inherited from the IUserValidator interface
+        /// ///Christopher K. Dierolf
         /// </summary>
         /// <returns>Returns true if credentials are authenticated. False if failed</returns>
         public bool AuthenticateUser(string userName, string password)
