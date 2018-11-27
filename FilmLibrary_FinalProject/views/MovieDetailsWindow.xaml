@@ -5,9 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilmLibrary_FinalProject.views"
         mc:Ignorable="d"
-        Title="MovieDetailsWindow" Height="450" Width="450" Loaded="Window_Loaded">
-    
+        Title="MovieDetailsWindow" Height="400" Width="450">
+    <!-- Dev DeCoste Start -->
     <Grid>
-        
+        <StackPanel Grid.Row="4" Grid.Column="2" Margin="5,10,5,10">
+            <Label Content="Title: " FontWeight="Bold" />
+            <Label Content="Year Released: " FontWeight="Bold"/>
+            <Label Content="Genre: " FontWeight="Bold"/>
+            <Label Content="Actors: " FontWeight="Bold"/>
+            <Label Content="Runtime:" FontWeight="Bold"/>
+            <Label Content="Plot: " FontWeight="Bold"/>
+            <Button x:Name="btRemoveMovie" Content="Remove Movie" Click="btRemoveMovie_Click"
+                Grid.Column="3" Grid.Row="4"
+                Margin="5,100,5,5" Background="Red" Foreground="White" FontWeight="Bold" FontSize="18" Height="50"/>
+
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="2">
+            <TextBlock x:Name="apiTitleText" Margin="40,5,0,0"/>
+            <TextBlock x:Name="apiYearText" Margin="90,11,0,0"/>
+            <TextBlock x:Name="apiGenreText" Margin="50,10,0,0"/>
+            <TextBlock x:Name="apiActorstext" Margin="50,10,0,0"/>
+            <TextBlock x:Name="apiRunTimeText" Margin="50,10,0,0"/>
+            <TextBlock x:Name="apiPlotText" Margin="38,10,0,0" TextWrapping="Wrap"/>
+        </StackPanel>
     </Grid>
+    <!-- Dev DeCoste End -->
 </Window>

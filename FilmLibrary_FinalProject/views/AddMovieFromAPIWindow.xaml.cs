@@ -93,6 +93,8 @@ namespace FilmLibrary_FinalProject.views
             {
                 string message = "The movie has been added!";
                 MessageBox.Show(message);
+                //Dev DeCoste
+                this.Close();
             }
             else
             {

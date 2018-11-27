@@ -9,6 +9,7 @@ namespace FilmLibrary_FinalProject.models
 {
     public class Movie
     {
+        // Dev DeCoste Removed Image field
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string MovieTitle { get; set; }
@@ -34,6 +35,7 @@ namespace FilmLibrary_FinalProject.models
         /// <param name="plot"></param>
         /// <param name="actors"></param>
         /// <param name="genre"></param>
+        /// // Dev DeCoste Removed Image field
         public Movie(string movieTitle, string releaseYear, string plot, string actors, string genre, string runTime)
         {
             MovieTitle = movieTitle;
