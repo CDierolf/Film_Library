@@ -39,6 +39,7 @@ namespace FilmLibrary_FinalProject
 
         }
 
+        //Dev DeCoste
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddMovieManualWindow newMovieManual = new AddMovieManualWindow();
@@ -107,7 +108,8 @@ namespace FilmLibrary_FinalProject
 
                 // Open the MovieDetailsWindow
                 MovieDetailsWindow mdw = new MovieDetailsWindow(movie);
-                mdw.ShowDialog();
+                //Dev DeCoste
+                mdw.Show();
 
                 // Refresh the movie list when the MovieDetailsWindow is closed.
                 movies = new List<Movie>();

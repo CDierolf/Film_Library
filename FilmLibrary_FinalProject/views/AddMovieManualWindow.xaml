@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:FilmLibrary_FinalProject.views"
         mc:Ignorable="d"
         Title="Add New Movie - Manual" Height="750" Width="300" Background="#7E878F" ResizeMode="NoResize">
+    <!-- Dev DeCoste Start -->
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -47,6 +48,6 @@
             <Label x:Name="lblAcctStatus" Margin="0,15,0,0" Height="40" HorizontalContentAlignment="Center"/>
 
         </StackPanel>
-
+        <!-- Dev DeCoste End -->
     </Grid>
 </Window>
