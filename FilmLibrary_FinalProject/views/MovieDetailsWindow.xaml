@@ -14,19 +14,24 @@
             <Label Content="Genre: " FontWeight="Bold"/>
             <Label Content="Actors: " FontWeight="Bold"/>
             <Label Content="Runtime:" FontWeight="Bold"/>
+            <Label Content="Director:" FontWeight="Bold"/>
+            <Label Content="Awards: " FontWeight="Bold"/>
             <Label Content="Plot: " FontWeight="Bold"/>
             <Button x:Name="btRemoveMovie" Content="Remove Movie" Click="btRemoveMovie_Click"
                 Grid.Column="3" Grid.Row="4"
-                Margin="5,100,5,5" Background="Red" Foreground="White" FontWeight="Bold" FontSize="18" Height="50"/>
+                Margin="5,45,5,5" Background="Red" Foreground="White" FontWeight="Bold" FontSize="18" Height="50"/>
 
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="2">
-            <TextBlock x:Name="apiTitleText" Margin="40,5,0,0"/>
-            <TextBlock x:Name="apiYearText" Margin="90,11,0,0"/>
+            <TextBlock x:Name="apiTitleText" Margin="50,15,0,0"/>
+            <TextBlock x:Name="apiYearText" Margin="100,11,292,0"/>
             <TextBlock x:Name="apiGenreText" Margin="50,10,0,0"/>
-            <TextBlock x:Name="apiActorstext" Margin="50,10,0,0"/>
-            <TextBlock x:Name="apiRunTimeText" Margin="50,10,0,0"/>
-            <TextBlock x:Name="apiPlotText" Margin="38,10,0,0" TextWrapping="Wrap"/>
+            <TextBlock x:Name="apiActorstext" Margin="70,10,0,0"/>
+            <TextBlock x:Name="apiRunTimeText" Margin="70,10,322,0"/>
+            <TextBlock x:Name="apiDirector" Margin="70,10,28,0"/>
+            <TextBlock x:Name="apiAwards" Margin="70,10,28,0"/>
+            <TextBlock x:Name="apiPlotText" Margin="38,10,0,10" TextWrapping="Wrap"/>
+            
         </StackPanel>
     </Grid>
     <!-- Dev DeCoste End -->
