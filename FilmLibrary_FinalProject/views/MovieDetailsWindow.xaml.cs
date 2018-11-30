@@ -28,20 +28,26 @@ namespace FilmLibrary_FinalProject.views
         {
             InitializeComponent();
             movie = _movie;
-            
+            //Dev DeCoste
+            GetMovieData(movie.MovieTitle);
+
+
         }
 
 
 
+
         //Dev DeCoste
-        public async void GetMovieData(string movieTitle)
+        public async void GetMovieData(string movie)
         {
             MovieAPIModel movieVM = new MovieAPIModel();
             MovieData movieData = new MovieData();
-            GetMovieData(movieTitle);
+
+            
+            
 
 
-            movieData = await movieVM.GetMovieDataAsync(movieTitle);
+            movieData = await movieVM.GetMovieDataAsync(movie);
 
             apiTitleText.Text = movieData.Title;
             apiYearText.Text = movieData.Year;
@@ -49,6 +55,8 @@ namespace FilmLibrary_FinalProject.views
             apiRunTimeText.Text = movieData.Runtime;
             apiPlotText.Text = movieData.Plot;
             apiGenreText.Text = movieData.Genre;
+            apiAwards.Text = movieData.Awards;
+            apiDirector.Text = movieData.Director;
         }
         
         private void btRemoveMovie_Click(object sender, RoutedEventArgs e)
@@ -59,6 +67,7 @@ namespace FilmLibrary_FinalProject.views
             MessageBox.Show("Movie Deleted");
             //Dev DeCoste
             this.Close();
+            
         }
 
     }
