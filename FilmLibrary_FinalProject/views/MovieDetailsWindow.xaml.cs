@@ -31,7 +31,6 @@ namespace FilmLibrary_FinalProject.views
             //Dev DeCoste
             GetMovieData(movie.MovieTitle);
 
-
         }
 
 
@@ -42,10 +41,6 @@ namespace FilmLibrary_FinalProject.views
         {
             MovieAPIModel movieVM = new MovieAPIModel();
             MovieData movieData = new MovieData();
-
-            
-            
-
 
             movieData = await movieVM.GetMovieDataAsync(movie);
 
