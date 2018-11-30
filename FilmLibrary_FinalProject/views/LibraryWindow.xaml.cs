@@ -109,7 +109,7 @@ namespace FilmLibrary_FinalProject
                 // Open the MovieDetailsWindow
                 MovieDetailsWindow mdw = new MovieDetailsWindow(movie);
                 //Dev DeCoste
-                mdw.Show();
+                mdw.ShowDialog();
 
                 // Refresh the movie list when the MovieDetailsWindow is closed.
                 movies = new List<Movie>();
