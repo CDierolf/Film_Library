@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilmLibrary_FinalProject"
         mc:Ignorable="d"
-        Title="LibraryWindow" Height="550" Width="1000" Background="#7E878F" ResizeMode="NoResize">
+        Title="LibraryWindow" Height="550" Width="1020" Background="#7E878F" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".3*"/>
@@ -13,28 +13,34 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height=".22*"/>
+            <RowDefinition Height=".3*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Rectangle Fill="#9BA6B0"
-                   Grid.Row="0" Stroke="Black"
+                   Grid.Row="0" Stroke="Black" Height="50"
                    Grid.ColumnSpan="3" Margin="10,10,10,16"/>
 
         <Rectangle
-                   Height="470"
+                   Height="450"
                    VerticalAlignment="Bottom"
                    Fill="#7E878F" Stroke="Black" StrokeThickness="1"
+            
                    Grid.ColumnSpan="3"
                    Grid.RowSpan="3" Margin="10,0,10,10"
             />
 
-        <StackPanel Grid.Row="0" Grid.Column="2">
-            <TextBox Margin="190,15,0,0" Width="200"
+        
+            <WrapPanel Grid.Row="0" Grid.Column="2" Margin="0,14,0,0">
+
+                <Label Content="Movie Title Search: " FontSize="20" VerticalAlignment="Center"/>
+                <TextBox Width="225" VerticalAlignment="Center"
+                         FontSize="16"
                      x:Name="txtSearchMovies"
                      TextChanged="txtSearchMovies_TextChanged"/>
-        </StackPanel>
+            </WrapPanel>
+    
         <ListView Grid.Column="1"
                 Grid.Row="1"
                 Grid.ColumnSpan="2"
@@ -83,7 +89,7 @@
 
 
 
-        <Rectangle Height="470"
+        <Rectangle Height="444"
                    Fill="#9BA6B0" Stroke="Black" StrokeThickness="1"
                    VerticalAlignment="Bottom"
                    Grid.Column="0"

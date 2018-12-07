@@ -96,7 +96,7 @@
             <TextBlock x:Name="apiGenreText" Margin="50,10,0,0"/>
             <TextBlock x:Name="apiActorstext" Margin="50,10,0,0"/>
             <TextBlock x:Name="apiRunTimeText" Margin="50,10,0,0"/>
-            <TextBlock x:Name="apiPlotText" Margin="38,10,0,0" TextWrapping="Wrap"/>
+            <TextBlock x:Name="apiPlotText" Margin="38,10,0,0" TextWrapping="WrapWithOverflow"/>
         </StackPanel>
 
 

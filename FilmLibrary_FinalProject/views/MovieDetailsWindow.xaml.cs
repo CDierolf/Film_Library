@@ -56,10 +56,7 @@ namespace FilmLibrary_FinalProject.views
         
         private void btRemoveMovie_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(movie.MovieTitle);
-            MessageBox.Show("Deleting..." + movie.MovieTitle);
             db.DeleteMovie(movie);
-            MessageBox.Show("Movie Deleted");
             //Dev DeCoste
             this.Close();
             

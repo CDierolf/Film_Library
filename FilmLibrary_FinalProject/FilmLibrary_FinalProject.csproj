@@ -81,6 +81,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="classes\exceptions\MovieExceptions.cs" />
     <Compile Include="classes\movieAPI\MovieAPIModel.cs" />
     <Compile Include="classes\movieAPI\MovieData.cs" />
     <Compile Include="views\AddMovieFromAPIWindow.xaml.cs">
