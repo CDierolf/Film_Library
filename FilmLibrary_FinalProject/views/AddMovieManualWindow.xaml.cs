@@ -36,18 +36,22 @@ namespace FilmLibrary_FinalProject.views
 
             Movie movie = new Movie(txtMovieTitle.Text, txtReleaseYear.Text, txtPlot.Text, txtActors.Text, txtGenre.Text, txtRunTime.Text);
 
-            if (db.AddMovie(movie))
-            {
-                string message = "The movie has been added!";
-                MessageBox.Show(message);
-                this.Close();
-            }
+            if (txtMovieTitle == null || txtMovieTitle.Text == "")
+                MessageBox.Show("No movie data to add.");
             else
             {
-                string message = "There was an error. Please try again!";
-                MessageBox.Show(message);
+                if (db.AddMovie(movie))
+                {
+                    string message = "The movie has been added!";
+                    MessageBox.Show(message);
+                    this.Close();
+                }
+                else
+                {
+                    string message = "There was an error. Please try again!";
+                    MessageBox.Show(message);
+                }
             }
-
         }
     }
 }

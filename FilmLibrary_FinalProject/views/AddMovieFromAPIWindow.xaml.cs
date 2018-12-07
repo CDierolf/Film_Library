@@ -116,12 +116,11 @@ namespace FilmLibrary_FinalProject.views
             // Christopher Dierolf
             DBConnectionClass db = new DBConnectionClass();
 
-            Movie movie = new Movie(apiTitleText.Text, apiYearText.Text, apiPlotText.Text, apiActorstext.Text, apiGenreText.Text, apiRunTimeText.Text);
-
             if (addMovieOk == false) // Don't add blank movies.
                 MessageBox.Show("There is no movie data to add.");
             else // Add the movie
             {
+                Movie movie = new Movie(apiTitleText.Text, apiYearText.Text, apiPlotText.Text, apiActorstext.Text, apiGenreText.Text, apiRunTimeText.Text);
                 if (db.AddMovie(movie))
                 {
                     string message = "The movie has been added!";

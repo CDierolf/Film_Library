@@ -30,11 +30,7 @@ namespace FilmLibrary_FinalProject.views
             movie = _movie;
             //Dev DeCoste
             GetMovieData(movie.MovieTitle);
-
         }
-
-
-
 
         //Dev DeCoste
         public async void GetMovieData(string movie)
@@ -59,7 +55,6 @@ namespace FilmLibrary_FinalProject.views
             db.DeleteMovie(movie);
             //Dev DeCoste
             this.Close();
-            
         }
 
     }
