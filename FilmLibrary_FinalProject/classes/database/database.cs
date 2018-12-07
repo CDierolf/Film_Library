@@ -80,9 +80,7 @@ namespace FilmLibraryDatabase
             {
                 using (SQLiteConnection conn = new SQLiteConnection(dbPath))
                 {
-                    var updateMovie = conn.Table<Movie>().Where(m => m.MovieTitle == movie.MovieTitle && movie.ReleaseYear == movie.ReleaseYear).FirstOrDefault();
-
-                    conn.Update(updateMovie);
+                    conn.Update(movie);
                 }
             } catch (SQLiteException ex)
             {
