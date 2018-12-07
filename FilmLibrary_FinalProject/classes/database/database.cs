@@ -68,6 +68,30 @@ namespace FilmLibraryDatabase
             }
             return true;
         }
+
+        /// <summary>
+        /// Updates a pre-existing movie record.
+        /// </summary>
+        /// <param name="movie"></param>
+        /// <returns></returns>
+        public bool UpdateMovie(Movie movie)
+        {
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection(dbPath))
+                {
+                    var updateMovie = conn.Table<Movie>().Where(m => m.MovieTitle == movie.MovieTitle && movie.ReleaseYear == movie.ReleaseYear).FirstOrDefault();
+
+                    conn.Update(updateMovie);
+                }
+            } catch (SQLiteException ex)
+            {
+                Console.WriteLine("An exception has occured\n\nMessage: {0}\nSource: {1}", ex.Message, ex.Source);
+                return false;
+            }
+            return true;
+           
+        }
         /// <summary>
         /// IDeletes a movie from the database as indicated by its title and correspoinding release year.
         /// </summary>
@@ -82,7 +106,7 @@ namespace FilmLibraryDatabase
                 using (SQLiteConnection conn = new SQLiteConnection(dbPath))
                 {
                     conn.CreateTable<Movie>();
-                    var delMovie = conn.Table<Movie>().Where(m => m.MovieTitle == movie.MovieTitle && movie.ReleaseYear == movie.ReleaseYear).FirstOrDefault();
+                    //var delMovie = conn.Table<Movie>().Where(m => m.MovieTitle == movie.MovieTitle && movie.ReleaseYear == movie.ReleaseYear).FirstOrDefault();
 
                     conn.Delete(movie);
                 }
