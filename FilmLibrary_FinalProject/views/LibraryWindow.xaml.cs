@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -50,16 +51,42 @@ namespace FilmLibrary_FinalProject
 
         }
 
+        //  Jason George
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            AddMovieFromAPIWindow newAPIMovie = new AddMovieFromAPIWindow();
-            newAPIMovie.ShowDialog();
-
-            // Refresh the movie list.
-            ShowMovies();
+            //  Make an initial connection check to ensure web connectivity
+            //  If this fails, the window won't open
+            bool checkConnection;
+            try
+            {
+                Ping myPing = new Ping();
+                String host = "omdbapi.com";
+                byte[] buffer = new byte[32];
+                int timeout = 1000;
+                PingOptions pingOptions = new PingOptions();
+                PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
+                checkConnection = reply.Status == IPStatus.Success;
+            }
+            catch (Exception)
+            {
+                checkConnection = false;
+            }
+            if (checkConnection == true)
+            {
+                AddMovieFromAPIWindow newAPIMovie = new AddMovieFromAPIWindow();
+                newAPIMovie.ShowDialog();
+                // Refresh the movie list.
+                ShowMovies();
+            }
+            else
+            {
+                MessageBox.Show("Connection could not be established with the api");
+            }
 
         }
 
+
+        // Christopher Dierolf
         private void RefreshMovies()
         {
             DBConnectionClass db = new DBConnectionClass();

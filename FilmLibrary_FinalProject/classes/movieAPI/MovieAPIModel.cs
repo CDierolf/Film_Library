@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows;
 
 namespace MovieAPI.models
 {
@@ -32,16 +32,25 @@ namespace MovieAPI.models
 
             string url = string.Format(BASE_URL, movieTitle, API_KEY); // Modify the base url
 
-            using (HttpClient client = new HttpClient()) // Create and use an HttpClient object
+            // Try-Catch: Jason George
+            try
             {
-                var response = await client.GetAsync(url);
 
-                string json = await response.Content.ReadAsStringAsync();
+                using (HttpClient client = new HttpClient()) // Create and use an HttpClient object
+                {
 
-                /* Deserialize the json data using Newtonsoft.Json's JsonConvert method.
-                 * Creates a MovieData object out of the json and returns a Task<MovieData> object.
-                 */
-                result = JsonConvert.DeserializeObject<MovieData>(json);
+                    var response = await client.GetAsync(url);
+
+                    string json = await response.Content.ReadAsStringAsync();
+
+                    /* Deserialize the json data using Newtonsoft.Json's JsonConvert method.
+                     * Creates a MovieData object out of the json and returns a Task<MovieData> object.
+                     */
+                    result = JsonConvert.DeserializeObject<MovieData>(json);
+                }
+            } catch (HttpRequestException e)
+            {
+                MessageBox.Show(e.Message);
             }
             return result;
         }
