@@ -34,7 +34,7 @@ namespace FilmLibrary_FinalProject.views
         {
             DBConnectionClass db = new DBConnectionClass();
 
-            Movie movie = new Movie(txtMovieTitle.Text, txtReleaseYear.Text, txtPlot.Text, txtActors.Text, txtGenre.Text, txtRunTime.Text);
+            Movie movie = new Movie(txtMovieTitle.Text, txtReleaseYear.Text, txtPlot.Text, txtActors.Text, txtGenre.Text, txtRunTime.Text, txtAwards.Text, txtDirector.Text);
 
             if (txtMovieTitle == null || txtMovieTitle.Text == "")
                 MessageBox.Show("No movie data to add.");

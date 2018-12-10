@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilmLibrary_FinalProject.views"
         mc:Ignorable="d"
-        Title="CreateAccountWindow" Height="600" Width="300" Background="#7E878F" ResizeMode="NoResize">
+        Title="Create New Account" Height="600" Width="300" Background="#7E878F" ResizeMode="NoResize">
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

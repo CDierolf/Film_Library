@@ -40,6 +40,10 @@
             <TextBox x:Name="txtActors"/>
             <Label Content="Genre: "/>
             <TextBox x:Name="txtGenre"/>
+            <Label Content="Director: "/>
+            <TextBox x:Name="txtDirector"/>
+            <Label Content="Awards:"/>
+            <TextBox x:Name="txtAwards"/>
             <Label Content="Runtime (In Minutes): "/>
             <TextBox x:Name="txtRunTime"/>
             <Label Content="Plot: "/>

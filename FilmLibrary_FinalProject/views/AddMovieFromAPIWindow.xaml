@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilmLibrary_FinalProject.views"
         mc:Ignorable="d"
-        Title="Add New Movie - From API" Height="420.141" Width="700" Background="#7E878F" ResizeMode="NoResize">
+        Title="Add New Movie - From API" Height="500" Width="700" Background="#7E878F" ResizeMode="NoResize">
     <!-- George -->
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
@@ -86,6 +86,8 @@
             <Label Content="Year Released: " FontWeight="Bold"/>
             <Label Content="Genre: " FontWeight="Bold"/>
             <Label Content="Actors: " FontWeight="Bold"/>
+            <Label Content="Director:" FontWeight="Bold"/>
+            <Label Content="Awards:" FontWeight="Bold"/>
             <Label Content="Runtime:" FontWeight="Bold"/>
             <Label Content="Plot: " FontWeight="Bold"/>
         </StackPanel>
@@ -95,6 +97,8 @@
             <TextBlock x:Name="apiYearText" Margin="90,11,0,0"/>
             <TextBlock x:Name="apiGenreText" Margin="50,10,0,0"/>
             <TextBlock x:Name="apiActorstext" Margin="50,10,0,0"/>
+            <TextBlock x:Name="apiDirector" Margin="50,10,0,0"/>
+            <TextBlock x:Name="apiAwards" Margin="50,10,0,0"/>
             <TextBlock x:Name="apiRunTimeText" Margin="50,10,0,0"/>
             <TextBlock x:Name="apiPlotText" Margin="38,10,0,0" TextWrapping="WrapWithOverflow"/>
         </StackPanel>

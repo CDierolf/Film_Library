@@ -18,6 +18,8 @@ namespace FilmLibrary_FinalProject.models
         public string Actors { get; set; }
         public string Genre { get; set; }
         public string RunTime { get; set; }
+        public string Awards { get; set; }
+        public string Director { get; set; }
 
 
         #region Constructors
@@ -36,7 +38,7 @@ namespace FilmLibrary_FinalProject.models
         /// <param name="actors"></param>
         /// <param name="genre"></param>
         /// // Dev DeCoste Removed Image field
-        public Movie(string movieTitle, string releaseYear, string plot, string actors, string genre, string runTime)
+        public Movie(string movieTitle, string releaseYear, string plot, string actors, string genre, string runTime, string director)
         {
             MovieTitle = movieTitle;
             ReleaseYear = releaseYear;
@@ -44,6 +46,12 @@ namespace FilmLibrary_FinalProject.models
             Actors = actors;
             Genre = genre;
             RunTime = runTime;
+            Director = director;
+        }
+
+        public Movie(string movieTitle, string releaseYear, string plot, string actors, string genre, string runTime, string awards, string director) : this(movieTitle, releaseYear, plot, actors, genre, runTime, director)
+        {
+            Awards = awards;
         }
 
         #endregion

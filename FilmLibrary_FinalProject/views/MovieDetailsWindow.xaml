@@ -5,32 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilmLibrary_FinalProject.views"
         mc:Ignorable="d"
-        Title="MovieDetailsWindow" Height="400" Width="450">
+        Title="Movie Details" Height="500" Width="450" WindowStartupLocation="CenterScreen">
     <!-- Dev DeCoste Start -->
     <Grid>
         <StackPanel Grid.Row="4" Grid.Column="2" Margin="5,10,5,10">
             <Label Content="Title: " FontWeight="Bold" />
-            <Label Content="Year Released: " FontWeight="Bold"/>
-            <Label Content="Genre: " FontWeight="Bold"/>
-            <Label Content="Actors: " FontWeight="Bold"/>
-            <Label Content="Runtime:" FontWeight="Bold"/>
-            <Label Content="Director:" FontWeight="Bold"/>
-            <Label Content="Awards: " FontWeight="Bold"/>
-            <Label Content="Plot: " FontWeight="Bold"/>
-            <Button x:Name="btRemoveMovie" Content="Remove Movie" Click="btRemoveMovie_Click"
-                Grid.Column="3" Grid.Row="4"
-                Margin="5,45,5,5" Background="Red" Foreground="White" FontWeight="Bold" FontSize="18" Height="50"/>
+            <Label Content="Year Released: " FontWeight="Bold" Margin="0,3,0,0"/>
+            <Label Content="Genre: " FontWeight="Bold" Margin="0,3,0,0"/>
+            <Label Content="Actors: " FontWeight="Bold" Margin="0,2,0,0"/>
+            <Label Content="Runtime:" FontWeight="Bold" Margin="0,2,0,0"/>
+            <Label Content="Director:" FontWeight="Bold" Margin="0,2,0,0"/>
+            <Label Content="Awards: " FontWeight="Bold" Margin="0,2,0,0"/>
+            <Label Content="Plot: " FontWeight="Bold" Margin="0,2,0,0" MaxHeight="150"/>
+            <StackPanel Grid.Column="3" Grid.Row="4" Margin="0,70,0,0">
+                <Button x:Name="btRemoveMovie" Content="Remove Movie" Click="btRemoveMovie_Click"
+                    Grid.Column="3" Grid.Row="4"
+                    Margin="5,45,5,5" Background="Red" Foreground="White" FontWeight="Bold" FontSize="18" Height="50"/>
+                <Button x:Name="btnEditMovie" Content="Edit Movie" Click="btnEditMovie_Click"
+                    Grid.Column="3" Grid.Row="4"
+                    Margin="5,0,5,5" Background="Green" Foreground="White" FontWeight="Bold" FontSize="18" Height="50"/>
+            </StackPanel>
 
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="2">
-            <TextBlock x:Name="apiTitleText" Margin="50,15,0,0"/>
-            <TextBlock x:Name="apiYearText" Margin="100,11,292,0"/>
-            <TextBlock x:Name="apiGenreText" Margin="50,10,0,0"/>
-            <TextBlock x:Name="apiActorstext" Margin="70,10,0,0"/>
-            <TextBlock x:Name="apiRunTimeText" Margin="70,10,322,0"/>
-            <TextBlock x:Name="apiDirector" Margin="70,10,28,0"/>
-            <TextBlock x:Name="apiAwards" Margin="70,10,28,0"/>
-            <TextBlock x:Name="apiPlotText" Margin="38,10,0,10" TextWrapping="Wrap"/>
+            <TextBox x:Name="apiTitleText" Margin="100,15,10,0"/>
+            <TextBox x:Name="apiYearText" Margin="100,11,10,0"/>
+            <TextBox x:Name="apiGenreText" Margin="100,10,10,0"/>
+            <TextBox x:Name="apiActorstext" Margin="100,10,10,0"/>
+            <TextBox x:Name="apiRunTimeText" Margin="100,10,10,0"/>
+            <TextBox x:Name="apiDirector" Margin="100,10,10,0"/>
+            <TextBox x:Name="apiAwards" Margin="100,10,10,0"/>
+            <TextBox x:Name="apiPlotText" Margin="100,10,10,10" TextWrapping="Wrap"/>
             
         </StackPanel>
     </Grid>

@@ -1,5 +1,6 @@
 ﻿using FilmLibrary_FinalProject.models;
 using MovieAPI.models;
+using FilmLibrary_FinalProject.classes;
 using FilmLibraryDatabase;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace FilmLibrary_FinalProject.views
     /// <summary>
     /// Interaction logic for MovieDetailsWindow.xaml
     /// </summary>
+    /// 
+    // Dev Decoste
     public partial class MovieDetailsWindow : Window
     {
         Movie movie = new Movie();
@@ -27,27 +30,15 @@ namespace FilmLibrary_FinalProject.views
         public MovieDetailsWindow(Movie _movie)
         {
             InitializeComponent();
-            movie = _movie;
-            //Dev DeCoste
-            GetMovieData(movie.MovieTitle);
-        }
-
-        //Dev DeCoste
-        public async void GetMovieData(string movie)
-        {
-            MovieAPIModel movieVM = new MovieAPIModel();
-            MovieData movieData = new MovieData();
-
-            movieData = await movieVM.GetMovieDataAsync(movie);
-
-            apiTitleText.Text = movieData.Title;
-            apiYearText.Text = movieData.Year;
-            apiActorstext.Text = movieData.Actors;
-            apiRunTimeText.Text = movieData.Runtime;
-            apiPlotText.Text = movieData.Plot;
-            apiGenreText.Text = movieData.Genre;
-            apiAwards.Text = movieData.Awards;
-            apiDirector.Text = movieData.Director;
+            this.movie = _movie;
+            apiTitleText.Text = movie.MovieTitle;
+            apiYearText.Text = movie.ReleaseYear;
+            apiActorstext.Text = movie.Actors;
+            apiRunTimeText.Text = movie.RunTime;
+            apiPlotText.Text = movie.Plot;
+            apiGenreText.Text = movie.Genre;
+            apiAwards.Text = movie.Awards;
+            apiDirector.Text = movie.Director;
         }
         
         private void btRemoveMovie_Click(object sender, RoutedEventArgs e)
@@ -57,5 +48,29 @@ namespace FilmLibrary_FinalProject.views
             this.Close();
         }
 
+        // Dev Decoste
+        private void btnEditMovie_Click(object sender, RoutedEventArgs e)
+        {
+            movie.MovieTitle = apiTitleText.Text;
+            movie.ReleaseYear = apiYearText.Text;
+            movie.Actors = apiActorstext.Text;
+            movie.RunTime = apiRunTimeText.Text;
+            movie.Plot = apiPlotText.Text;
+            movie.Genre = apiGenreText.Text;
+            movie.Awards = apiAwards.Text;
+            movie.Director = apiDirector.Text;
+
+            DBConnectionClass db = new DBConnectionClass();
+            if (db.UpdateMovie(movie) == true)
+            {
+                MessageBox.Show("Movie updated!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong");
+            }
+            
+        }
     }
 }

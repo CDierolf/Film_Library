@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilmLibrary_FinalProject"
         mc:Ignorable="d"
-        Title="LibraryWindow" Height="550" Width="1020" Background="#7E878F" ResizeMode="NoResize">
+        Title="Film Cache - Library" Height="550" Width="1020" Background="#7E878F" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".3*"/>

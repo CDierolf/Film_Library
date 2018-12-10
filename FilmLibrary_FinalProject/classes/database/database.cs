@@ -59,6 +59,7 @@ namespace FilmLibraryDatabase
                 {
                     conn.CreateTable<Movie>(); // Only creates a new table if one doesn't exist locally already.
                     conn.Insert(movie);
+                    return true;
                 }
             }
             catch (SQLiteException ex)
@@ -66,7 +67,6 @@ namespace FilmLibraryDatabase
                 Console.WriteLine("An exception has occured\n\nMessage: {0}\nSource: {1}", ex.Message, ex.Source);
                 return false;
             }
-            return true;
         }
 
         /// <summary>
@@ -80,14 +80,15 @@ namespace FilmLibraryDatabase
             {
                 using (SQLiteConnection conn = new SQLiteConnection(dbPath))
                 {
+                    conn.CreateTable<Movie>();
                     conn.Update(movie);
+                    return true;
                 }
             } catch (SQLiteException ex)
             {
                 Console.WriteLine("An exception has occured\n\nMessage: {0}\nSource: {1}", ex.Message, ex.Source);
                 return false;
             }
-            return true;
            
         }
         /// <summary>

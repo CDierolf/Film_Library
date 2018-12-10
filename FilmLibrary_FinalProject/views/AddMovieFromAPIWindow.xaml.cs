@@ -62,7 +62,9 @@ namespace FilmLibrary_FinalProject.views
                     apiTitleText.Text = movieData.Title;
                     apiYearText.Text = movieData.Year;
                     apiActorstext.Text = movieData.Actors;
+                    apiDirector.Text = movieData.Director;
                     apiRunTimeText.Text = movieData.Runtime;
+                    apiAwards.Text = movieData.Awards;
                     apiPlotText.Text = movieData.Plot;
                     apiGenreText.Text = movieData.Genre;
 
@@ -101,9 +103,12 @@ namespace FilmLibrary_FinalProject.views
             apiTitleText.Text = "";
             apiYearText.Text = "";
             apiActorstext.Text = "";
+            apiDirector.Text = "";
             apiRunTimeText.Text = "";
+            apiAwards.Text = "";
             apiPlotText.Text = "";
             apiGenreText.Text = "";
+
         }
 
         /// <summary>
@@ -120,7 +125,7 @@ namespace FilmLibrary_FinalProject.views
                 MessageBox.Show("There is no movie data to add.");
             else // Add the movie
             {
-                Movie movie = new Movie(apiTitleText.Text, apiYearText.Text, apiPlotText.Text, apiActorstext.Text, apiGenreText.Text, apiRunTimeText.Text);
+                Movie movie = new Movie(apiTitleText.Text, apiYearText.Text, apiPlotText.Text, apiActorstext.Text, apiGenreText.Text, apiRunTimeText.Text, apiAwards.Text, apiDirector.Text);
                 if (db.AddMovie(movie))
                 {
                     string message = "The movie has been added!";
