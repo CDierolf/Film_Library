@@ -98,7 +98,7 @@ namespace FilmLibrary_FinalProject.views
 
         private void btAPIReset_Click(object sender, RoutedEventArgs e)
         {
-            txtAPIMovieTitle = null;
+            txtAPIMovieTitle.Clear();
 
             apiTitleText.Text = "";
             apiYearText.Text = "";
