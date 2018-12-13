@@ -23,6 +23,7 @@ namespace FilmLibrary_FinalProject.views
     /////// </summary>
     public partial class AddMovieFromAPIWindow : Window
     {
+        // Christopher Dierolf
         bool addMovieOk = false; // Add Movie Flag used to prevent the addition of blank movie data.
 
         public AddMovieFromAPIWindow()
@@ -75,6 +76,7 @@ namespace FilmLibrary_FinalProject.views
                 MessageBox.Show(e.Message);
             }
 
+            // TEST
             //MessageBox.Show("Here are your results:\n " +
             //  "Title: " + movieData.Title + " \n Year Released: " + movieData.Year + " \n Genre: " + movieData.Genre +
             //  " \n Writer: " + movieData.Writer + " \n Plot: " + movieData.Plot);

@@ -9,6 +9,8 @@ namespace MovieAPI.models
     /// <summary>
     /// Movie class file
     /// Christopher K. Dierolf
+    /// This class contains all of the fields available to the API. Not all fields are used.
+    /// See Movie.cs to see all fields that are used in the API.
     /// </summary>
     public class Rating
     {

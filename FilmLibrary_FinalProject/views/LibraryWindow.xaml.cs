@@ -29,6 +29,7 @@ namespace FilmLibrary_FinalProject
     public partial class LibraryWindow : Window
     {
         // Make the list accessible throughout the window.
+        // Christopher Dierolf
         List<Movie> movies;
         public LibraryWindow()
         {
@@ -41,6 +42,7 @@ namespace FilmLibrary_FinalProject
         }
 
         //Dev DeCoste
+        // Open the Add Movie Manual Window
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddMovieManualWindow newMovieManual = new AddMovieManualWindow();
@@ -52,6 +54,7 @@ namespace FilmLibrary_FinalProject
         }
 
         //  Jason George
+        // Checks to ensure that there is indeed an internet connection before opening the AddMovieAPIWindow.
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //  Make an initial connection check to ensure web connectivity
@@ -87,6 +90,7 @@ namespace FilmLibrary_FinalProject
 
 
         // Christopher Dierolf
+        // Method to refresh the movie list.
         private void RefreshMovies()
         {
             DBConnectionClass db = new DBConnectionClass();

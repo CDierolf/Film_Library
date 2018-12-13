@@ -53,6 +53,7 @@ namespace FilmLibrary_FinalProject
 
         /// <summary>
         /// Open CreateAccountWindow so that the user can create a new account.
+        /// Christopher Dierolf
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

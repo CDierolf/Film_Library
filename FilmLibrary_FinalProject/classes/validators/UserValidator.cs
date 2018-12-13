@@ -12,6 +12,7 @@ using System.Windows;
 namespace FilmLibrary_FinalProject.models.validators
 {
     // Implementation of the UserValidator class
+    // Validates the data passed into the user class.
     // Christopher Dierolf
     public class UserValidator : IUserValidator
     {

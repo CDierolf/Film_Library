@@ -9,6 +9,12 @@ using System.Windows;
 
 namespace FilmLibrary_FinalProject.models
 {
+    /// <summary>
+    /// Movie Class
+    /// Christopher Dierolf
+    /// Used fields for saving movie data from the database.
+    /// Not all fields from the API are used, thus, this class is smaller than the MovieAPI Model
+    /// </summary>
     public class Movie
     {
         // Dev DeCoste Removed Image field

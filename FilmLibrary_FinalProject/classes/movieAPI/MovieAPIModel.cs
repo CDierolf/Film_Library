@@ -12,6 +12,7 @@ namespace MovieAPI.models
 {
     /// <summary>
     /// Christopher K. Dierolf
+    /// Class to pull data from the omdbapi.
     /// </summary>
     public class MovieAPIModel
     {

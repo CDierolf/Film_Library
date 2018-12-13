@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FilmLibrary_FinalProject.classes.exceptions
 {
+    // Exception handling if the movie title wasn't found while using the API.
     public class NoTitleFoundMovieException : Exception
     {
         public NoTitleFoundMovieException() { }
@@ -14,6 +15,7 @@ namespace FilmLibrary_FinalProject.classes.exceptions
 
     }
 
+    // Not used
     public class InvalidMovieYearException : Exception
     {
         public InvalidMovieYearException() { }

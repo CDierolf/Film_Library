@@ -41,10 +41,10 @@ namespace FilmLibrary_FinalProject.views
             apiDirector.Text = movie.Director;
         }
         
+        // Dev Decoste
         private void btRemoveMovie_Click(object sender, RoutedEventArgs e)
         {
             db.DeleteMovie(movie);
-            //Dev DeCoste
             this.Close();
         }
 

@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 namespace FilmLibrary_FinalProject.models
 {
     /// <summary>
-    /// 
+    /// Christopher Dierolf
+    /// User Class
     /// </summary>
     public class User
     {

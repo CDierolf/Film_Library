@@ -31,6 +31,12 @@ namespace FilmLibrary_FinalProject.views
         }
 
         // Dev Decoste
+        /// <summary>
+        /// Submit the movie data to the database.
+        /// Requires at least a title.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DBConnectionClass db = new DBConnectionClass();
