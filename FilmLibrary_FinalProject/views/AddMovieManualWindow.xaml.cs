@@ -26,7 +26,8 @@ namespace FilmLibrary_FinalProject.views
         public AddMovieManualWindow()
         {
             InitializeComponent();
-            
+            txtMovieTitle.Clear();
+            txtReleaseYear.Clear();
         }
 
         // Dev Decoste
@@ -34,12 +35,11 @@ namespace FilmLibrary_FinalProject.views
         {
             DBConnectionClass db = new DBConnectionClass();
 
-            Movie movie = new Movie(txtMovieTitle.Text, txtReleaseYear.Text, txtPlot.Text, txtActors.Text, txtGenre.Text, txtRunTime.Text, txtAwards.Text, txtDirector.Text);
-
-            if (txtMovieTitle == null || txtMovieTitle.Text == "")
-                MessageBox.Show("No movie data to add.");
+            if(txtMovieTitle == null || txtMovieTitle.Text == "")
+                MessageBox.Show("No movie data to add. Ensure there is at least a title.");
             else
             {
+                Movie movie = new Movie(txtMovieTitle.Text, txtReleaseYear.Text, txtPlot.Text, txtActors.Text, txtGenre.Text, txtRunTime.Text, txtAwards.Text, txtDirector.Text);
                 if (db.AddMovie(movie))
                 {
                     string message = "The movie has been added!";

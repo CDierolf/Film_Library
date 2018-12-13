@@ -30,17 +30,18 @@ namespace FilmLibrary_FinalProject
         /// Authenticate login information.
         /// Calls User.AuthenticateUser(username, password) which calls
         /// DbConnectionClass.FindUserData(username, password) to authenticate
-        /// user data.
+        /// user data. Passes the username for database filtering.
+        ///
         /// Christopher Dierolf
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            LibraryWindow lw = new LibraryWindow();
             User user = new User();
             if (user.AuthenticateUser(txtUserName.Text, pwdPassword.Password))
             {
+                LibraryWindow lw = new LibraryWindow();
                 lw.Show();
                 this.Close();
             }

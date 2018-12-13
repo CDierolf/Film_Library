@@ -1,9 +1,11 @@
-﻿using SQLite;
+﻿using FilmLibrary_FinalProject.classes.exceptions;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FilmLibrary_FinalProject.models
 {
@@ -55,5 +57,9 @@ namespace FilmLibrary_FinalProject.models
         }
 
         #endregion
+
+
+
+       
     }
 }

@@ -13,4 +13,11 @@ namespace FilmLibrary_FinalProject.classes.exceptions
         public NoTitleFoundMovieException(string message, Exception inner) : base(message, inner) { }
 
     }
+
+    public class InvalidMovieYearException : Exception
+    {
+        public InvalidMovieYearException() { }
+        public InvalidMovieYearException(string message) : base(message) { }
+        public InvalidMovieYearException(string message, Exception inner) : base(message, inner) { }
+    }
 }
