@@ -47,7 +47,7 @@
             <Label Content="Runtime (In Minutes): "/>
             <TextBox x:Name="txtRunTime"/>
             <Label Content="Plot: "/>
-            <TextBox x:Name="txtPlot" Height="62"/>
+            <TextBox x:Name="txtPlot" Height="62" TextWrapping="WrapWithOverflow"/>
             <Button x:Name="btAddMovieManual" Content="Add Movie" Margin="0,10,0,0" Click="Button_Click" Height="39"/>
             <Label x:Name="lblAcctStatus" Margin="0,15,0,0" Height="40" HorizontalContentAlignment="Center"/>
 
